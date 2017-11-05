@@ -133,7 +133,20 @@ h1 .fa:hover{
 }
 
 .caption span{
+  margin-top: 20px;
+  position: fixed;
+  right: 300px;
+  left: 300px;
   text-align: center;
-  color: #060026;
+  color: white;
   font-size: 4em;
+}
+
+#div_three{
+  height: 400px;
+}
+
+#div_four{
+  height: 500px;
+  background-color: #969AA1;
 }
