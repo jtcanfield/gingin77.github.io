@@ -205,9 +205,9 @@ h2{
   position: fixed;
   text-align: center;
   color: #060026;
-  font-size: 3em;
+  font-size: 2em;
   top: 150px;
-  width: 550px;
+  /*width: 550px;*/
   left: 50%;
   transform: translate(-50%, 0%);
   transition: margin-left 500ms;
@@ -243,4 +243,11 @@ footer{
 
 footer i{
   color: #060026;
+}
+
+@media (min-width: 700px) {
+  #fixed_message{
+    width: 550px;
+    font-size: 3em;
+  }
 }
