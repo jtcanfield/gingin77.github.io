@@ -10,7 +10,8 @@
   <meta name="HandheldFriendly" content="true" />
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link href="https://fonts.googleapis.com/css?family=Amiri|Cabin|Cedarville+Cursive|Expletus+Sans:600|Fenix|Forum|Josephin+Sans:400,700|Marcellus|Marcellus+SC|Nunito+Sans|Overlock|Prompt|Poppins|Righteous" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amiri|Cabin|Cedarville+Cursive|Expletus+Sans:600|Fenix|Forum|Josephin+Sans:400,700|Marcellus|Marcellus+SC|Nunito+Sans|Overlock|Prompt|Poppins|Righteous|Krona+One|Mukta|Muli|Tenali+Ramakrishna|Spinnaker|Montserrat"
+    rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -24,34 +25,45 @@
 <body>
   <nav>
     <div id='side_bar'>
-      <div class="close_button" onclick="menuClose()">
-        X
+      <div class="close_button" onclick="menuClose()"><i class="fa fa-times" aria-hidden="true"></i>
       </div>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume">Resume</a></li>
+        <li><a href="#home">Home</i></a></li>
+        <dl>
+          <dt>Resume</dt>
+          <dd><a>View <i class="fa fa-external-link" aria-hidden="true"></i></a></dd>
+          <dd><a>Download <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></dd>
+          </dt>
+        </dl>
+        <li><a href="#about">About</i></a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Contact <i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
       </ul>
       <div class="logo">
-        <br />
-        <span>GH</span>
+        <img id="logo" src="favicons/android-chrome-192x192.png" />
       </div>
     </div>
   </nav>
-  <section id="main">
-    <div id="div_one">
-      <div id="hamburger" onclick="menuOpen()">
-        <span class='hamburger'></span>
-        <span class='hamburger'></span>
-        <span class='hamburger'></span>
-      </div>
-      <h1>Ginnie Hench <a href="#contact"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-      </h1>
+  <div id="home">
+    <div id="hamburger" onclick="menuOpen()">
+      <span class='hamburger'></span>
+      <span class='hamburger'></span>
+      <span class='hamburger'></span>
     </div>
-    <div id="div_two">
+    <div class="title_div_right">
+        <h1>Ginnie Hench</h1>
+      <!-- <div class="space-between"> -->
+        <h2>Web Developer</h2>
+        <a href="#contact">ginniehench@gmail.com</a>
+      <!-- </div> -->
+    </div>
+  </div>
+  <section id="main">
+    <div class="height_filler">
+
+    </div>
+    <div id="about">
     </div>
     <div class="image_holder">
       <div class="caption">
@@ -59,22 +71,17 @@
         <span>Thanks for stopping by. This site is currently under construction.</span>
       </div>
     </div>
-    <div id="div_three">
-      <div id="hamburger" onclick="menuOpen()">
-        <span class='hamburger'></span>
-        <span class='hamburger'></span>
-        <span class='hamburger'></span>
-      </div>
-    </div>
     <div id="div_four">
-      <div id="hamburger" onclick="menuOpen()">
-        <span class='hamburger'></span>
-        <span class='hamburger'></span>
-        <span class='hamburger'></span>
-      </div>
     </div>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <footer>
+    <div class="connect_icons">
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      <i class="fa fa-linkedin" aria-hidden="true"></i>
+      <i class="fa fa-github" aria-hidden="true"></i>
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </div>
+  </footer>
   <script type="application/javascript" src="app.js"></script>
 </body>
 

@@ -1,4 +1,5 @@
-/*font-family: 'Nunito Sans', sans-serif;
+/*
+font-family: 'Nunito Sans', sans-serif;
 font-family: 'Prompt', sans-serif;
 font-family: 'Cedarville Cursive', cursive;
 font-family: 'Expletus Sans', cursive;
@@ -9,8 +10,12 @@ font-family: 'Cabin', sans-serif;
 font-family: 'Marcellus+SC', serif;
 font-family: 'Righteous', cursive;
 font-family: 'Forum', cursive;
-
-
+font-family: 'Krona One', sans-serif;
+font-family: 'Mukta', sans-serif;
+font-family: 'Tenali Ramakrishna', sans-serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Spinnaker', sans-serif;
 
 Colors:
 Dark purple:  #060026;
@@ -22,7 +27,7 @@ shade of white, used for background: #F6F5F6;
 body{
   margin: auto 0px;
   padding: 0px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Spinnaker', sans-serif;
   background-color: #F6F5F6;
 }
 
@@ -30,25 +35,42 @@ body{
   position: fixed;
   width: 0vw;
   height: 100%;
-  z-index: 1;
+  z-index: 50;
   top: 0;
   left: 0;
   background-color: #060026;
   overflow-x: hidden;
-  transition: 500ms linear;
+  transition: all 500ms;
+  display: flex;
+  flex-direction: column;
 }
 
 #side_bar ul{
   -webkit-padding-start: 20px;
   margin: 60px 0 0;
-  font-size: 2em;
+}
+
+li, dt, dd {
+  padding: 8% 0;
+  list-style-type: none;
+  color: #c9c9c9;
+  font-size: 1.5em;
   font-weight: 300;
 }
 
-#side_bar ul li {
-  padding: 2% 0 10% 2%;
-  list-style-type: none;
-  color: #c9c9c9;
+dd {
+  -webkit-margin-start: 20px;
+  padding: 3% 0;
+  font-size: 1em;
+}
+
+dt {
+  padding-bottom: 0;
+}
+
+dl{
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
 
 #side_bar a{
@@ -76,16 +98,42 @@ body{
   margin-left: 50px;
 }
 
-section {
-  transition: margin-left 500ms;
-  padding: 16px;
+.logo{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 2;
 }
 
-#div_one{
+#logo {
+  width: 10vw;
+  height: auto;
+  padding: 10%;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+section {
+  transition: margin-left 500ms;
+  transition-delay: 100ms
+  /*padding: 16px;*/
+}
+
+
+#home{
+  width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  right: 0;
+  z-index: 25;
+  background: #FEFDFE;
+  left: 0;
+  padding: 1%;
+  box-shadow: 0 0px 3px rgba( 0,0,0,0.45);
 }
 
 #hamburger span {
@@ -98,55 +146,100 @@ section {
   border-radius: 20px;
 }
 
+
+.title_div_right {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 1% 2% 0;
+  flex-grow: 2;
+}
+
+/*.space-between{
+  display: flex;
+  flex-direction: column;
+
+}*/
+
 h1{
-  font-family: Marcellus;
-  font-size: 3em;
+  font-family: josefin sans;
+  font-weight: 400;
+  /*font-size: 4em;*/
+  color: #060026;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  text-align: right;
+}
+
+h2{
+  display: inline;
+  font-family: josefin sans;
+  font-weight: 400;
+  /*font-size: 3.25em;*/
   color: #060026;
   margin: 5% 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  text-align: right;
+
 }
 
-h1 .fa{
+.title_div_right a {
+  /*font-size: 1.77em;*/
+  cursor: auto;
+  text-decoration: none;
   color: #060026;
 }
 
-h1 .fa:hover{
-  color: #c9c9c9;
-  /*color: #7E8AA6;*/
+.height_filler{
+  height: 190px;
 }
 
 .image_holder{
-  background-image: url('images/IMG_0999_1.jpg');
-  min-height: 400px;
+  background-image: url('images/IMG_0999_100_dpi.jpg');
+  min-height: 200px;
   position:relative;
   background-attachment: fixed;
   background-position-x: 0px;
-  background-position-y: 40px;
+  background-position-y: 80px;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 -16px;
-}
-
-.caption {
-  max-width: 100%;
-  text-align: center;
-  padding: 15px 0 15px 0;
+  /*margin: 0 -16px;*/
 }
 
 .caption span{
-  margin-top: 20px;
+  /*margin-top: 20px;*/
+  padding: 0 25%;
   position: fixed;
-  right: 300px;
-  left: 300px;
   text-align: center;
   color: white;
-  font-size: 4em;
+  font-size: 3em;
+  top: 250px;
 }
 
-#div_three{
+#about{
   height: 400px;
 }
 
 #div_four{
   height: 500px;
   background-color: #969AA1;
+}
+
+footer{
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  background-color: #FEFDFE;
+}
+.connect_icons{
+  padding: 1%;
+  font-size: 2em;
+}
+
+footer i{
+  color: #060026;
 }
