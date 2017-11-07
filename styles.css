@@ -149,7 +149,7 @@ section {
 }
 
 h1{
-  font-family: josefin sans;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   /*font-size: 4em;*/
   color: #060026;
@@ -160,7 +160,7 @@ h1{
 
 h2{
   display: inline;
-  font-family: josefin sans;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 1.7em;
   color: #060026;
