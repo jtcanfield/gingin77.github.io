@@ -6,9 +6,16 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Spinnaker', sans-serif;
 
 Colors:
-Dark purple:  #060026;
-Light grey, used for text on nav: #c9c9c9;
-shade of white, used for background: #F6F5F6;
+
+Purples used:
+  Dark purple on nav side: #060026;
+  Lavendar used on a link hover: #504494;
+
+Variations on grey/white used:
+  For text on nav side_bar: #c9c9c9;
+  For connect_icons on photo: #e6e6e7;
+  For background on body tag: #F6F5F6;
+  For background on top fixed header: #FEFDFE;
 
 */
 
@@ -18,6 +25,29 @@ body{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   background-color: #F6F5F6;
+}
+
+a {
+  text-decoration: none;
+  color: #060026;  /* dark purple used in side_bar background: */
+}
+
+a:hover {
+  color: #504494;
+}
+
+p{
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  margin: 0.3em 0;
+  width: 600px;
+  font-size: 1.2em;
+}
+
+.anchor {
+  display:block;
+  padding-top:100px;
+  margin-top:-60px;
 }
 
 #resume{
@@ -69,7 +99,6 @@ dd {
 
 #side_bar a{
   color: #c9c9c9;
-  text-decoration: none;
 }
 
 #side_bar a:hover {
@@ -107,13 +136,7 @@ dd {
   max-height: 80px;
 }
 
-section {
-  transition: margin-left 500ms;
-  transition-delay: margin-left 100ms
-}
-
-
-#home{
+header {
   width: 100%;
   margin: auto;
   display: flex;
@@ -135,7 +158,7 @@ section {
   height: 4px;
   margin: 8px 0;
   background: #060026;
-  z-index: 10;
+  z-index: 25;
   border-radius: 20px;
 }
 
@@ -171,56 +194,71 @@ h2{
 }
 
 .title_div_right a {
+  font-size: 1em;
   font-weight: 300;
   cursor: auto;
-  text-decoration: none;
-  color: #060026;
 }
 
+section {
+  transition: margin-left 500ms;
+  transition-delay: margin-left 100ms
+}
+
+
 .height_filler{
-  height: 190px;
+  height: 94px;
+}
+
+/*#about_centered p{
+  font-size: 0.4em;
+}*/
+
+/*#about, #portfolio_wrapper{
+  margin: 40px;
+}*/
+
+#about_wrapper, #portfolio_wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about_centered{
+  /*position: fixed;*/
+  font-weight: 400;
+  text-align: center;
+  /*color: #060026;*/
+  font-size: 2em;
+  /*top: 120px;
+  left: 50%;
+  transform: translate(-50%, 0%);*/
+  /*transition: margin-left 500ms;
+  transition-delay: margin-left 100ms*/
 }
 
 .image_holder{
   background-image: url('images/IMG_0999_1.jpg');
-  min-height: 200px;
+  min-height: 300px;
   position:relative;
   background-attachment: fixed;
   background-position-x: 0px;
   background-position-y: 80px;
   background-repeat: no-repeat;
   background-size: cover;
-  /*margin: 0 -16px;*/
 }
 
 .image_holder .connect_icons_outer {
   margin-top: 50px;
 }
 
-.image_holder i {
-  color: #F6F5F6;
+.image_holder a {
+  color: #e6e6e7;
+  text-shadow: 2px 2px 8px #101013;
 }
 
-#fixed_message{
-  position: fixed;
-  text-align: center;
-  color: #060026;
-  font-size: 2em;
-  top: 150px;
-  /*width: 550px;*/
-  left: 50%;
-  transform: translate(-50%, 0%);
-  transition: margin-left 500ms;
-  transition-delay: margin-left 100ms
-}
-
-#about{
-  height: 400px;
-}
-
-#div_four{
-  height: 600px;
-  /*background-color: #969AA1;*/
+.image_holder a:hover {
+  color: white;
 }
 
 footer{
@@ -241,13 +279,13 @@ footer{
   justify-content: space-evenly;
 }
 
-footer i{
-  color: #060026;
+.filler{
+  height: 300px;
 }
 
 @media (min-width: 700px) {
-  #fixed_message{
-    width: 550px;
-    font-size: 3em;
+  #about_centered{
+    /*width: 550px;*/
+    font-size: 2em;
   }
 }
