@@ -1,9 +1,5 @@
 /*
-font-family: 'Cedarville Cursive', cursive;
 font-family: 'Josefin Sans', sans-serif;
-font-family: 'Marcellus+SC', serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Spinnaker', sans-serif;
 
 Colors:
 
@@ -21,7 +17,7 @@ Variations on grey/white used:
 
 /* Center the loader */
 #loader {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   z-index: 1;
@@ -62,17 +58,12 @@ Variations on grey/white used:
     transition: opacity 1.5s;
 }
 
-/*.fadein {
-
-}*/
-
 body{
   margin: auto 0px;
   padding: 0px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   background-color: #F6F5F6;
-  /*opacity: 1;*/
 }
 
 a {
@@ -153,13 +144,6 @@ dd {
   color: white;
 }
 
-#side_bar span{
-  font-family: 'Cedarville Cursive', cursive;
-  font-size: 3em;
-  color: #c9c9c9;
-  margin-left: 50%;
-}
-
 #side_bar .close_button{
   color: #c9c9c9;
   position: absolute;
@@ -220,7 +204,6 @@ header {
 }
 
 h1{
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   /*font-size: 4em;*/
   color: #060026;
@@ -231,7 +214,6 @@ h1{
 
 h2{
   display: inline;
-  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 1.7em;
   color: #060026;
@@ -318,7 +300,6 @@ footer{
 
 @media (min-width: 700px) {
   #about_centered{
-    /*width: 550px;*/
     font-size: 2em;
   }
 }
