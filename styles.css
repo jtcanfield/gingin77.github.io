@@ -19,12 +19,60 @@ Variations on grey/white used:
 
 */
 
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border: 10px solid #c8c6d2;
+  border-radius: 50%;
+  border-top: 10px solid #060026;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  transition: 200ms opacity;
+}
+
+#contents {
+  transition: 2s opacity;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.fadein {
+    opacity: 1;
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+/*.fadein {
+
+}*/
+
 body{
   margin: auto 0px;
   padding: 0px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   background-color: #F6F5F6;
+  /*opacity: 1;*/
 }
 
 a {
@@ -204,18 +252,9 @@ section {
   transition-delay: margin-left 100ms
 }
 
-
 .height_filler{
   height: 94px;
 }
-
-/*#about_centered p{
-  font-size: 0.4em;
-}*/
-
-/*#about, #portfolio_wrapper{
-  margin: 40px;
-}*/
 
 #about_wrapper, #portfolio_wrapper{
   display: flex;
@@ -225,21 +264,14 @@ section {
 }
 
 #about_centered{
-  /*position: fixed;*/
   font-weight: 400;
   text-align: center;
-  /*color: #060026;*/
   font-size: 2em;
-  /*top: 120px;
-  left: 50%;
-  transform: translate(-50%, 0%);*/
-  /*transition: margin-left 500ms;
-  transition-delay: margin-left 100ms*/
 }
 
 .image_holder{
   background-image: url('images/IMG_0999_1.jpg');
-  min-height: 300px;
+  min-height: 140px;
   position:relative;
   background-attachment: fixed;
   background-position-x: 0px;
@@ -277,6 +309,7 @@ footer{
   width: 300px;
   display: flex;
   justify-content: space-evenly;
+  padding-top: 60px;
 }
 
 .filler{

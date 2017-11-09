@@ -1,3 +1,26 @@
+document.onreadystatechange = function () {
+  var state = document.readyState
+  console.log(state)
+  if (state === 'interactive') {
+    document.getElementById('loader').classList.add('fadeIn')
+    document.getElementById('contents').classList.add('fadeOut')
+  } else if (state === 'complete') {
+    setTimeout(function () {
+      document.getElementById('interactive')
+      document.getElementById('loader').classList.remove('fadeIn')
+      document.getElementById('loader').classList.add('fadeOut')
+      showContents()
+    }, 500)
+  }
+}
+
+function showContents () {
+  setTimeout(function () {
+    document.getElementById('contents').classList.remove('fadeOut')
+    document.getElementById('contents').classList.add('fadeIn')
+  }, 100)
+}
+
 let sideBar = document.getElementById('side_bar')
 let main = document.getElementById('main')
 let hamburger = document.getElementById('hamburger')
