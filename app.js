@@ -1,14 +1,18 @@
+let loader = document.getElementById('loader')
+let contents = document.getElementById('contents')
+
 document.onreadystatechange = function () {
   var state = document.readyState
   console.log(state)
   if (state === 'interactive') {
-    document.getElementById('loader').classList.add('fadeIn')
-    document.getElementById('contents').classList.add('fadeOut')
+    loader.classList.add('fadeIn')
+    contents.classList.add('fadeOut')
   } else if (state === 'complete') {
     setTimeout(function () {
       document.getElementById('interactive')
-      document.getElementById('loader').classList.remove('fadeIn')
-      document.getElementById('loader').classList.add('fadeOut')
+      loader.classList.remove('fadeIn')
+      loader.classList.add('fadeOut')
+      loader.remove()
       showContents()
     }, 500)
   }
@@ -16,8 +20,8 @@ document.onreadystatechange = function () {
 
 function showContents () {
   setTimeout(function () {
-    document.getElementById('contents').classList.remove('fadeOut')
-    document.getElementById('contents').classList.add('fadeIn')
+    contents.classList.remove('fadeOut')
+    contents.classList.add('fadeIn')
   }, 100)
 }
 

@@ -18,8 +18,9 @@ Variations on grey/white used:
 /* Center the loader */
 #loader {
   position: fixed;
-  left: 50%;
+  left: 57%;
   top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   margin: -75px 0 0 -75px;
   border: 10px solid #c8c6d2;
@@ -79,7 +80,6 @@ p{
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   margin: 0.3em 0;
-  width: 600px;
   font-size: 1.2em;
 }
 
@@ -184,6 +184,10 @@ header {
   box-shadow: 0 0px 3px rgba( 0,0,0,0.45);
 }
 
+#hamburger{
+  padding-left: 2%;
+}
+
 #hamburger span {
   display: block;
   width: 36px;
@@ -199,7 +203,7 @@ header {
   display: flex;
   flex-direction: column;
   text-align: right;
-  padding: 0 2%;
+  padding: 2% 4%;
   flex-grow: 2;
 }
 
@@ -238,7 +242,9 @@ section {
   height: 94px;
 }
 
-#about_wrapper, #portfolio_wrapper{
+#about_wrapper, #portfolio_wrapper, #skills_wrapper{
+  margin: 0 1em;
+  text-align: justify;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,6 +281,17 @@ section {
   color: white;
 }
 
+#skills_wrapper img{
+  width: 60%;
+  height: auto;
+  max-width: 520px;
+}
+
+#caption {
+  width: 500px;
+  font-style: italic;
+}
+
 footer{
   transition: margin-left 500ms;
   transition-delay: margin-left 100ms
@@ -299,7 +316,32 @@ footer{
 }
 
 @media (min-width: 700px) {
+  #loader {
+    left: 50%;
+  }
+
+  #hamburger{
+    padding-left: 0;
+  }
+
+  .title_div_right{
+    padding: 0 2%;
+  }
+
   #about_centered{
     font-size: 2em;
   }
+
+  #about_wrapper, #portfolio_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p{
+    width: 600px;
+  }
+
+
 }
