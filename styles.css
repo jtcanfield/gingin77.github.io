@@ -242,7 +242,7 @@ section {
   height: 94px;
 }
 
-#about_wrapper, #portfolio_wrapper{
+#about_wrapper, #portfolio_wrapper, #skills_wrapper{
   margin: 0 1em;
   text-align: justify;
   display: flex;
@@ -279,6 +279,17 @@ section {
 
 .image_holder a:hover {
   color: white;
+}
+
+#skills_wrapper img{
+  width: 60%;
+  height: auto;
+  max-width: 520px;
+}
+
+#caption {
+  width: 500px;
+  font-style: italic;
 }
 
 footer{
