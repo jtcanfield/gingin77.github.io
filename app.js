@@ -25,10 +25,12 @@ function adjustIfNeeded () {
 
 function adjustForSmallVP () {
   let elsToRemove = document.getElementsByClassName('removeOnMobile')
-  console.log(elsToRemove)
   for (let i = elsToRemove.length - 1; i >= 0; i--) {
     elsToRemove[i].remove()
   }
+  resume = document.getElementsByTagName('dt')[0]
+  resume.innerText = ""
+  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
 }
 
 let loader = document.getElementById('loader')
