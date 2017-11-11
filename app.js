@@ -33,7 +33,12 @@ function adjustForSmallVP () {
   resume = document.getElementsByTagName('dt')[0]
   resume.innerText = ""
   resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
-  
+  resume.remove()
+  let parent = document.getElementsByTagName('ul')[0]
+  parent.children[3].insertAdjacentElement("afterEnd", resume)
+  let dlEl = document.getElementsByTagName('dl')[0]
+  dlEl.remove()
+
   let footerEl = document.getElementById('footer')
   footerEl.classList.add('footer_mobile')
 }
