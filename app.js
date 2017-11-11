@@ -1,3 +1,48 @@
+//  If media queries, then??
+// Items removed on small devices:
+// From nav bar, no:
+// Home, Connect, logo, check which resume link to keep
+// Remove margin left on sections where it gets added....
+// let lWidth = window.screen.width
+
+window.addEventListener('resize', adjustIfNeeded)
+let viewportWidth = window.innerWidth
+console.log('screen width ' + viewportWidth)
+if (viewportWidth <= 500) {
+  adjustForSmallVP()
+} else {
+  console.log('no adjustment needed')
+}
+
+function adjustIfNeeded () {
+  viewportWidth = window.innerWidth
+  if (viewportWidth <= 500) {
+    adjustForSmallVP()
+  } else {
+    console.log('no adjustment needed')
+  }
+}
+
+
+
+function adjustForSmallVP () {
+  let elsToRemove = document.getElementsByClassName('removeOnMobile')
+  for (let i = elsToRemove.length - 1; i >= 0; i--) {
+    elsToRemove[i].remove()
+  }
+  resume = document.getElementsByTagName('dt')[0]
+  resume.innerText = ""
+  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
+  resume.remove()
+  let parent = document.getElementsByTagName('ul')[0]
+  parent.children[3].insertAdjacentElement("afterEnd", resume)
+  let dlEl = document.getElementsByTagName('dl')[0]
+  dlEl.remove()
+
+  let footerEl = document.getElementById('footer')
+  footerEl.classList.add('footer_mobile')
+}
+
 let loader = document.getElementById('loader')
 let contents = document.getElementById('contents')
 

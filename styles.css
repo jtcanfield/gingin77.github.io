@@ -16,6 +16,7 @@ Variations on grey/white used:
 */
 
 /* Center the loader */
+
 #loader {
   position: fixed;
   left: 57%;
@@ -85,8 +86,8 @@ p{
 
 .anchor {
   display:block;
-  padding-top:100px;
-  margin-top:-60px;
+  padding-top: 150px;
+  margin-top: -70px;
 }
 
 #resume{
@@ -94,26 +95,29 @@ p{
 }
 
 #side_bar{
-  position: fixed;
-  width: 0vw;
-  height: 100%;
-  z-index: 50;
-  top: 0;
-  left: 0;
   background-color: #060026;
+  position: fixed;
+  z-index: 50;
   overflow-x: hidden;
   transition: all 500ms;
+  width: 100%;
+  top: 98px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-#side_bar ul{
-  -webkit-padding-start: 20px;
-  margin: 60px 0 0;
+#side_bar ul {
+  display: flex;
+  /*flex-direction: row;*/
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  -webkit-padding-end: 8px;
+  -webkit-padding-start: 8px;
+  margin: 10px 0;
 }
 
 li, dt, dd {
-  padding: 8% 0;
   list-style-type: none;
   color: #c9c9c9;
   font-size: 1.5em;
@@ -144,13 +148,13 @@ dd {
   color: white;
 }
 
-#side_bar .close_button{
-  color: #c9c9c9;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5em;
-  margin-left: 50px;
+#side_bar .close_button {
+    color: #c9c9c9;
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    font-size: 1.5em;
+    margin-left: 50px;
 }
 
 .logo{
@@ -251,6 +255,10 @@ section {
   justify-content: center;
 }
 
+/*#about_wrapper{
+  margin-top: 30px;
+}*/
+
 #about_centered{
   font-weight: 400;
   text-align: center;
@@ -282,25 +290,42 @@ section {
 }
 
 #skills_wrapper img{
-  width: 60%;
+  width: 100%;
   height: auto;
   max-width: 520px;
 }
 
 #caption {
-  width: 500px;
+  /*width: 500px;*/
   font-style: italic;
+  margin: 0.3em 0;
+  font-size: 1.2em;
 }
 
 footer{
   transition: margin-left 500ms;
-  transition-delay: margin-left 100ms
+  transition-delay: margin-left 100ms;
+}
+
+.footer_mobile{
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 5px;
+  background-color: #F6F5F6;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .connect_icons_outer {
   display: flex;
   justify-content: center;
 }
+
+#footer_icons{
+  padding: 10px 200px 0;
+}
+
+
 
 .connect_icons{
   padding: 1%;
@@ -311,17 +336,50 @@ footer{
   padding-top: 60px;
 }
 
+#footer_icons .connect_icons{
+  padding-top: 0px;
+}
+
 .filler{
   height: 300px;
 }
 
-@media (min-width: 700px) {
+/*    Mobile       */
+@media (min-width: 500px) {
+  .anchor {
+    padding-top:100px;
+    margin-top:-60px;
+  }
+
   #loader {
     left: 50%;
   }
 
   #hamburger{
     padding-left: 0;
+  }
+
+  #side_bar{
+    width: 0vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+  }
+
+  #side_bar ul{
+    flex-direction: column;
+    align-items: start;
+    -webkit-padding-start: 20px;
+    margin: 60px 0 0;
+  }
+
+  li, dt, dd {
+    padding: 8% 0;
+  }
+
+  #side_bar .close_button{
+    top: 10px;
   }
 
   .title_div_right{
@@ -332,16 +390,55 @@ footer{
     font-size: 2em;
   }
 
-  #about_wrapper, #portfolio_wrapper{
+  #about_wrapper, #portfolio_wrapper, #skills_wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 0px;
+  }
+
+  /*#about_wrapper{
+    margin-top: 90px;
+  }*/
+
+  #caption {
+    width: 500px;
+    margin-bottom: 100px;
   }
 
   p{
     width: 600px;
   }
 
+  #last_portfolio_p{
+    margin-bottom: 200px;
+  }
+
+  #skills_wrapper img{
+    width: 60%;
+  }
+
+  /*  Styles for footer that may need to be overwritten*/
+  /*footer{
+    position: auto;
+    bottom: 0px;
+    padding-bottom: 0;
+    background-color: none;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }*/
+
+  #footer_icons {
+    padding: 0px;
+  }
+
+  /*.connect_icons_outer {
+    padding: 0;
+  }*/
+
+  .connect_icons {
+    padding-top: 60px;
+  }
 
 }
