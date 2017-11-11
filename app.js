@@ -23,22 +23,28 @@ function adjustIfNeeded () {
   }
 }
 
-
-
 function adjustForSmallVP () {
+  rmElsForMob()
+  addFooterStysMob()
+  modResMob()
+}
+
+function modResMob () {
+  let parent = document.getElementsByTagName('ul')[0]
+  let resume = document.getElementsByTagName('dt')[0]
+  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
+  parent.appendChild(resume)
+  document.getElementsByTagName('dl')[0].remove()
+}
+
+function rmElsForMob () {
   let elsToRemove = document.getElementsByClassName('removeOnMobile')
   for (let i = elsToRemove.length - 1; i >= 0; i--) {
     elsToRemove[i].remove()
   }
-  resume = document.getElementsByTagName('dt')[0]
-  resume.innerText = ""
-  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
-  resume.remove()
-  let parent = document.getElementsByTagName('ul')[0]
-  parent.children[3].insertAdjacentElement("afterEnd", resume)
-  let dlEl = document.getElementsByTagName('dl')[0]
-  dlEl.remove()
+}
 
+function addFooterStysMob () {
   let footerEl = document.getElementById('footer')
   footerEl.classList.add('footer_mobile')
 }
