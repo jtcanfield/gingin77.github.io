@@ -1,47 +1,8 @@
-//  If media queries, then??
-// Items removed on small devices:
-// From nav bar, no:
-// Home, Connect, logo, check which resume link to keep
 // Remove margin left on sections where it gets added....
-// let lWidth = window.screen.width
 
 window.addEventListener('resize', adjustIfNeeded)
 let viewportWidth = window.innerWidth
 console.log('screen width ' + viewportWidth)
-if (viewportWidth <= 500) {
-  adjustForSmallVP()
-} else {
-  console.log('no adjustment needed')
-}
-
-function adjustIfNeeded () {
-  viewportWidth = window.innerWidth
-  if (viewportWidth <= 500) {
-    adjustForSmallVP()
-  } else {
-    console.log('no adjustment needed')
-  }
-}
-
-
-
-function adjustForSmallVP () {
-  let elsToRemove = document.getElementsByClassName('removeOnMobile')
-  for (let i = elsToRemove.length - 1; i >= 0; i--) {
-    elsToRemove[i].remove()
-  }
-  resume = document.getElementsByTagName('dt')[0]
-  resume.innerText = ""
-  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
-  resume.remove()
-  let parent = document.getElementsByTagName('ul')[0]
-  parent.children[3].insertAdjacentElement("afterEnd", resume)
-  let dlEl = document.getElementsByTagName('dl')[0]
-  dlEl.remove()
-
-  let footerEl = document.getElementById('footer')
-  footerEl.classList.add('footer_mobile')
-}
 
 let loader = document.getElementById('loader')
 let contents = document.getElementById('contents')
@@ -49,17 +10,23 @@ let contents = document.getElementById('contents')
 document.onreadystatechange = function () {
   var state = document.readyState
   console.log(state)
-  if (state === 'interactive') {
-    loader.classList.add('fadeIn')
-    contents.classList.add('fadeOut')
-  } else if (state === 'complete') {
-    setTimeout(function () {
-      document.getElementById('interactive')
-      loader.classList.remove('fadeIn')
-      loader.classList.add('fadeOut')
-      loader.remove()
-      showContents()
-    }, 500)
+  if (viewportWidth > 500) {
+    console.log('vp bigger than 500')
+    if (state === 'interactive') {
+      loader.classList.add('fadeIn')
+      contents.classList.add('fadeOut')
+    } else if (state === 'complete') {
+      setTimeout(function () {
+        loader.classList.remove('fadeIn')
+        loader.classList.add('fadeOut')
+        showContents()
+        loader.remove()
+      }, 500)
+    }
+  } else {
+    adjustForSmallVP()
+    console.log('vp smallare than 500')
+    loader.remove()
   }
 }
 
@@ -70,18 +37,60 @@ function showContents () {
   }, 100)
 }
 
+// if (viewportWidth <= 500) {
+//   adjustForSmallVP()
+// } else {
+//   console.log('no adjustment needed')
+// }
+
+function adjustIfNeeded () {
+  viewportWidth = window.innerWidth
+  if (viewportWidth <= 500) {
+    loader.remove()
+    adjustForSmallVP()
+  } else {
+    console.log('no adjustment needed')
+  }
+}
+
+function adjustForSmallVP () {
+  rmElsForMob()
+  addFooterStysMob()
+  modResMob()
+}
+
+function modResMob () {
+  let parent = document.getElementsByTagName('ul')[0]
+  let resume = document.getElementsByTagName('dt')[0]
+  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
+  parent.appendChild(resume)
+  let dlEl = document.getElementsByTagName('dl')[0]
+  if (dlEl !== undefined) {
+    dlEl.remove()
+  }
+}
+
+function rmElsForMob () {
+  let elsToRemove = document.getElementsByClassName('removeOnMobile')
+  for (let i = elsToRemove.length - 1; i >= 0; i--) {
+    elsToRemove[i].remove()
+  }
+}
+
+function addFooterStysMob () {
+  let footerEl = document.getElementById('footer')
+  footerEl.classList.add('footer_mobile')
+}
+
 let sideBar = document.getElementById('side_bar')
 let main = document.getElementById('main')
 let hamburger = document.getElementById('hamburger')
 let footer = document.getElementById('footer')
-// let message = document.getElementById('about_centered')
 
 function menuOpen () {
   sideBar.setAttribute('style', 'width:180px;')
-  // 'max-width: 200px; width:24vw; min-width: 160px;'
   main.style.marginLeft = '180px'
   footer.style.marginLeft = '180px'
-  // message.style.marginLeft = '90px'
   hamburger.style.visibility = 'hidden'
 }
 
@@ -89,15 +98,5 @@ function menuClose () {
   sideBar.setAttribute('style', 'width:0')
   main.style.marginLeft = '0'
   footer.style.marginLeft = '0'
-  // message.style.marginLeft = '0'
   hamburger.style.visibility = 'visible'
 }
-
-
-// for (let i = 0; i < spans.length; i++) {
-//   spans[i].style.visibility = 'hidden'
-// }
-
-// for (let i = 0; i < spans.length; i++) {
-//   spans[i].style.visibility = 'visible'
-// }
