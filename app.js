@@ -19,8 +19,8 @@ document.onreadystatechange = function () {
       setTimeout(function () {
         loader.classList.remove('fadeIn')
         loader.classList.add('fadeOut')
-        loader.remove()
         showContents()
+        loader.remove()
       }, 500)
     }
   } else {
