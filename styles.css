@@ -77,7 +77,7 @@ a:hover {
   color: #504494;
 }
 
-p{
+p {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   margin: 0.3em 0;
@@ -407,8 +407,8 @@ footer{
     margin-bottom: 100px;
   }
 
-  p{
-    width: 600px;
+  #caption {
+    width: 500px;
   }
 
   #last_portfolio_p{
@@ -419,26 +419,19 @@ footer{
     width: 60%;
   }
 
-  /*  Styles for footer that may need to be overwritten*/
-  /*footer{
-    position: auto;
-    bottom: 0px;
-    padding-bottom: 0;
-    background-color: none;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }*/
-
   #footer_icons {
     padding: 0px;
   }
-
-  /*.connect_icons_outer {
-    padding: 0;
-  }*/
 
   .connect_icons {
     padding-top: 60px;
   }
 
+  p {
+    width: 600px;
+  }
+
+  #skills_wrapper img{
+    width: 60%;
+  }
 }
