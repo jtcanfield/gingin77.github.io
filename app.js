@@ -1,17 +1,12 @@
-// Remove margin left on sections where it gets added....
-
 window.addEventListener('resize', adjustIfNeeded)
 let viewportWidth = window.innerWidth
-console.log('screen width ' + viewportWidth)
 
 let loader = document.getElementById('loader')
 let contents = document.getElementById('contents')
 
 document.onreadystatechange = function () {
   var state = document.readyState
-  console.log(state)
   if (viewportWidth > 500) {
-    console.log('vp bigger than 500')
     if (state === 'interactive') {
       loader.classList.add('fadeIn')
       contents.classList.add('fadeOut')
@@ -25,23 +20,9 @@ document.onreadystatechange = function () {
     }
   } else {
     adjustForSmallVP()
-    console.log('vp smallare than 500')
     loader.remove()
   }
 }
-
-function showContents () {
-  setTimeout(function () {
-    contents.classList.remove('fadeOut')
-    contents.classList.add('fadeIn')
-  }, 100)
-}
-
-// if (viewportWidth <= 500) {
-//   adjustForSmallVP()
-// } else {
-//   console.log('no adjustment needed')
-// }
 
 function adjustIfNeeded () {
   viewportWidth = window.innerWidth
@@ -51,6 +32,13 @@ function adjustIfNeeded () {
   } else {
     console.log('no adjustment needed')
   }
+}
+
+function showContents () {
+  setTimeout(function () {
+    contents.classList.remove('fadeOut')
+    contents.classList.add('fadeIn')
+  }, 100)
 }
 
 function adjustForSmallVP () {

@@ -34,21 +34,6 @@ Variations on grey/white used:
   transition: 200ms opacity;
 }
 
-.mob_loader {
-  position: fixed;
-  left: 57%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  margin: -75px 0 0 -75px;
-  border: 10px solid #c8c6d2;
-  border-radius: 50%;
-  border-top: 10px solid #060026;
-  width: 80px;
-  height: 80px;
-  transition: 200ms opacity;
-}
-
 #contents {
   transition: 2s opacity;
 }
