@@ -70,7 +70,7 @@ body{
 
 a {
   text-decoration: none;
-  color: #060026;  /* dark purple used in side_bar background: */
+  color: #060026;
 }
 
 a:hover {
@@ -276,16 +276,27 @@ section {
   background-size: cover;
 }
 
-.image_holder .connect_icons_outer {
+.image_holder_mob{
+  background-image: url('images/IMG_0999_100_dpi.jpg');
+  min-height: 160px;
+  position:relative;
+  background-position-x: 0px;
+  background-position-y: -35px;
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: cover;
+}
+
+#image_holder .connect_icons_outer {
   margin-top: 50px;
 }
 
-.image_holder a {
+#image_holder a {
   color: #e6e6e7;
   text-shadow: 2px 2px 8px #101013;
 }
 
-.image_holder a:hover {
+#image_holder a:hover {
   color: white;
 }
 
@@ -325,15 +336,13 @@ footer{
   padding: 10px 200px 0;
 }
 
-
-
 .connect_icons{
   padding: 1%;
   font-size: 2em;
   width: 300px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 #footer_icons .connect_icons{
@@ -397,10 +406,6 @@ footer{
     justify-content: center;
     margin-top: 0px;
   }
-
-  /*#about_wrapper{
-    margin-top: 90px;
-  }*/
 
   #caption {
     width: 500px;

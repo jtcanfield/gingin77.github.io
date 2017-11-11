@@ -43,6 +43,7 @@ function showContents () {
 
 function adjustForSmallVP () {
   rmElsForMob()
+  adjPhotoMob()
   addFooterStysMob()
   modResMob()
 }
@@ -68,6 +69,12 @@ function rmElsForMob () {
 function addFooterStysMob () {
   let footerEl = document.getElementById('footer')
   footerEl.classList.add('footer_mobile')
+}
+
+function adjPhotoMob () {
+  let imageHolder = document.getElementById('image_holder')
+  imageHolder.classList.remove('image_holder')
+  imageHolder.classList.add('image_holder_mob')
 }
 
 let sideBar = document.getElementById('side_bar')
