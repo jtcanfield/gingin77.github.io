@@ -1,3 +1,36 @@
+//  If media queries, then??
+// Items removed on small devices:
+// From nav bar, no:
+// Home, Connect, logo, check which resume link to keep
+// Remove margin left on sections where it gets added....
+// let lWidth = window.screen.width
+
+window.addEventListener('resize', adjustIfNeeded)
+let viewportWidth = window.innerWidth
+console.log('screen width ' + viewportWidth)
+if (viewportWidth <= 500) {
+  adjustForSmallVP()
+} else {
+  console.log('no adjustment needed')
+}
+
+function adjustIfNeeded () {
+  viewportWidth = window.innerWidth
+  if (viewportWidth <= 500) {
+    adjustForSmallVP()
+  } else {
+    console.log('no adjustment needed')
+  }
+}
+
+function adjustForSmallVP () {
+  let elsToRemove = document.getElementsByClassName('removeOnMobile')
+  console.log(elsToRemove)
+  for (let i = elsToRemove.length - 1; i >= 0; i--) {
+    elsToRemove[i].remove()
+  }
+}
+
 let loader = document.getElementById('loader')
 let contents = document.getElementById('contents')
 
