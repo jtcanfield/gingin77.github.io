@@ -23,6 +23,8 @@ function adjustIfNeeded () {
   }
 }
 
+
+
 function adjustForSmallVP () {
   let elsToRemove = document.getElementsByClassName('removeOnMobile')
   for (let i = elsToRemove.length - 1; i >= 0; i--) {
@@ -31,6 +33,9 @@ function adjustForSmallVP () {
   resume = document.getElementsByTagName('dt')[0]
   resume.innerText = ""
   resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
+  
+  let footerEl = document.getElementById('footer')
+  footerEl.classList.add('footer_mobile')
 }
 
 let loader = document.getElementById('loader')

@@ -305,6 +305,9 @@ section {
 footer{
   transition: margin-left 500ms;
   transition-delay: margin-left 100ms;
+}
+
+.footer_mobile{
   position: fixed;
   bottom: 0px;
   padding-bottom: 5px;
@@ -417,17 +420,17 @@ footer{
   }
 
   /*  Styles for footer that may need to be overwritten*/
-  footer{
+  /*footer{
     position: auto;
     bottom: 0px;
     padding-bottom: 0;
     background-color: none;
     left: 50%;
     transform: translate(-50%, 0);
-  }
+  }*/
 
   #footer_icons {
-    padding-top: 0px;
+    padding: 0px;
   }
 
   /*.connect_icons_outer {
