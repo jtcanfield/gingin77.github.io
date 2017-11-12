@@ -68,6 +68,10 @@ body{
   background-color: #F6F5F6;
 }
 
+li {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
   color: #060026;
@@ -111,8 +115,7 @@ p {
   margin: 10px 0;
 }
 
-li, dt, dd {
-  list-style-type: none;
+#side_bar li, #side_bar dt, #side_bar dd {
   color: #c9c9c9;
   font-size: 1.5em;
   font-weight: 300;
@@ -249,6 +252,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 471px;
 }
 
 .anchor{
@@ -285,6 +289,7 @@ section {
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
   background-size: cover;
+  margin-bottom: 35px;
 }
 
 #image_holder .connect_icons_outer {
@@ -303,13 +308,48 @@ section {
 #skills_img{
   width: 100%;
   height: auto;
-  max-width: 520px;
+  max-width: 600px;
 }
 
 #caption {
-  /*width: 500px;*/
   font-style: italic;
   margin: 0.3em 0;
+  font-size: 1.2em;
+}
+
+.connect_wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  justify-content: space-between;
+}
+
+#connect_message{
+  display: flex;
+  flex-direction: column;
+  max-width: 430px;
+}
+
+#connect_message p{
+  max-width: 430px;
+}
+
+#self{
+  width: 30%;
+  height: 30%;
+  margin-left: 10px;
+}
+
+#col1{
+  width: 30px;
+}
+
+table{
+  margin: 10px 0 0 25px;
+}
+
+th{
+  font-weight: 300;
   font-size: 1.2em;
 }
 
@@ -383,7 +423,7 @@ footer{
     margin: 60px 0 0;
   }
 
-  li, dt, dd {
+  #side_bar li, #side_bar dt, #side_bar dd {
     padding: 8% 0;
   }
 
@@ -405,21 +445,17 @@ footer{
   }
 
   #caption {
-    width: 500px;
+    max-width: 600px;
     margin-bottom: 100px;
-  }
-
-  #caption {
-    width: 500px;
   }
 
   #last_portfolio_p{
     margin-bottom: 200px;
   }
 
-  #skills_img{
+  /*#skills_img{
     width: 60%;
-  }
+  }*/
 
   #footer_icons {
     padding: 0px;
