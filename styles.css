@@ -305,6 +305,19 @@ section {
   color: white;
 }
 
+.bold_header{
+  font-weight: 400;
+}
+
+.skills_list{
+  margin: 1.5% 0 5% 0;
+}
+
+.skills_list p{
+  margin-bottom: 5%;
+  text-align: left;
+}
+
 #skills_img{
   width: 100%;
   height: auto;
@@ -313,7 +326,7 @@ section {
 
 #caption {
   font-style: italic;
-  margin: 0.3em 0;
+  margin: 0.3em 0 1.5em 0;
   font-size: 1.2em;
 }
 
@@ -453,8 +466,14 @@ footer{
     margin-bottom: 100px;
   }
 
-  #last_portfolio_p{
-    margin-bottom: 200px;
+  .p_600_max a{
+    color: #504494;
+    font-weight: 400;
+  }
+
+  .p_600_max a:hover{
+    color: #a19fae;
+    font-weight: 400;
   }
 
   .connect_wrapper {
