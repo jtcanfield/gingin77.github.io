@@ -251,7 +251,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 471px;
 }
 
@@ -319,25 +319,28 @@ section {
 
 .connect_wrapper {
   display: flex;
-  flex-direction: row;
-  max-width: 600px;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 #connect_message{
   display: flex;
-  flex-direction: column;
-  max-width: 430px;
+  flex-direction: row;
+  align-items: center;
 }
 
 #connect_message p{
-  max-width: 430px;
+  margin: 0 0.5em 0 0;
+  text-align: left;
+}
+
+.self_img_holder{
+  flex-shrink: 0.8;
 }
 
 #self{
-  width: 30%;
-  height: 30%;
-  margin-left: 10px;
+  width: 100%;
+  height: auto;
 }
 
 #col1{
@@ -345,12 +348,16 @@ section {
 }
 
 table{
-  margin: 10px 0 0 25px;
+  margin: 16px 0 0 0;
 }
 
-th{
+td{
   font-weight: 300;
   font-size: 1.2em;
+}
+
+td {
+  text-align: left;
 }
 
 footer{
@@ -451,6 +458,21 @@ footer{
 
   #last_portfolio_p{
     margin-bottom: 200px;
+  }
+
+  .connect_wrapper {
+    flex-direction: row;
+    max-width: 600px;
+    justify-content: space-between;
+  }
+
+  #connect_message{
+    flex-direction: column;
+    max-width: 430px;
+  }
+
+  #connect_message p{
+    max-width: 430px;
   }
 
   /*#skills_img{
