@@ -117,7 +117,7 @@ p {
 
 #side_bar li, #side_bar dt, #side_bar dd {
   color: #c9c9c9;
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: 300;
 }
 
@@ -251,8 +251,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 471px;
+  justify-content: flex-start;
+  min-height: 600px;
 }
 
 .anchor{
@@ -319,25 +319,28 @@ section {
 
 .connect_wrapper {
   display: flex;
-  flex-direction: row;
-  max-width: 600px;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 #connect_message{
   display: flex;
-  flex-direction: column;
-  max-width: 430px;
+  flex-direction: row;
+  align-items: center;
 }
 
 #connect_message p{
-  max-width: 430px;
+  margin: 0 0.5em 0 0;
+  text-align: left;
+}
+
+#self_img_holder{
+  flex-shrink: 0.8;
 }
 
 #self{
-  width: 30%;
-  height: 30%;
-  margin-left: 10px;
+  width: 100%;
+  height: auto;
 }
 
 #col1{
@@ -345,12 +348,16 @@ section {
 }
 
 table{
-  margin: 10px 0 0 25px;
+  margin: 16px 0 0 0;
 }
 
-th{
+td{
   font-weight: 300;
   font-size: 1.2em;
+}
+
+td {
+  text-align: left;
 }
 
 footer{
@@ -389,10 +396,6 @@ footer{
   padding-top: 0px;
 }
 
-.filler{
-  height: 400px;
-}
-
 /*    Replace Mobile Styles with the Desktop settings below      */
 @media (min-width: 500px) {
   .anchor{
@@ -425,6 +428,7 @@ footer{
 
   #side_bar li, #side_bar dt, #side_bar dd {
     padding: 8% 0;
+    font-size: 1.5em;
   }
 
   #side_bar .close_button{
@@ -453,9 +457,31 @@ footer{
     margin-bottom: 200px;
   }
 
-  /*#skills_img{
-    width: 60%;
-  }*/
+  .connect_wrapper {
+    flex-direction: column;
+    max-width: 600px;
+    /*justify-content: space-between;*/
+  }
+
+  #connect_message{
+    flex-direction: row;
+  }
+
+  #connect_message p{
+    /*max-width: 430px;*/
+  }
+
+  #self_img_holder{
+    flex-shrink: 1;
+  }
+
+  #self {
+    width: 25%;
+  }
+
+  table {
+    margin: 16px 20%;
+  }
 
   #footer_icons {
     padding: 0px;
@@ -465,7 +491,7 @@ footer{
     padding-top: 60px;
   }
 
-  p {
+  .p_600_max p {
     width: 600px;
   }
 }
