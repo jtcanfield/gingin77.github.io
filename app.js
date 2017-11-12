@@ -10,6 +10,7 @@ document.onreadystatechange = function () {
     if (state === 'interactive') {
       loader.classList.add('fadeIn')
       contents.classList.add('fadeOut')
+      alignContactPhotoNonMob()
     } else if (state === 'complete') {
       setTimeout(function () {
         loader.classList.remove('fadeIn')
@@ -30,7 +31,8 @@ function adjustIfNeeded () {
     loader.remove()
     adjustForSmallVP()
   } else {
-    console.log('no adjustment needed')
+    alignContactPhotoNonMob()
+    console.log('Contact photo adjustment needed')
   }
 }
 
@@ -39,6 +41,17 @@ function showContents () {
     contents.classList.remove('fadeOut')
     contents.classList.add('fadeIn')
   }, 100)
+}
+
+function alignContactPhotoNonMob () {
+  let self = document.getElementById('self')
+  let connectMessage = document.getElementById('connect_message')
+  let divToDelete = document.getElementById('self_img_holder')
+  undefined
+  connectMessage.appendChild(self)
+  if (divToDelete !== null) {
+    divToDelete.remove()
+  }
 }
 
 function adjustForSmallVP () {
@@ -51,7 +64,7 @@ function adjustForSmallVP () {
 function modResMob () {
   let parent = document.getElementsByTagName('ul')[0]
   let resume = document.getElementsByTagName('dt')[0]
-  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>'
+  resume.innerHTML = '<a href="public/G.Hench_Resume_Nov.pdf" download>Resume</a>'
   parent.appendChild(resume)
   let dlEl = document.getElementsByTagName('dl')[0]
   if (dlEl !== undefined) {
