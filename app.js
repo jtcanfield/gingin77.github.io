@@ -44,7 +44,7 @@ function showContents () {
 function adjustForSmallVP () {
   rmElsForMob()
   adjPhotoMob()
-  addFooterStysMob()
+  addFooterStylesMob()
   modResMob()
 }
 
@@ -66,7 +66,7 @@ function rmElsForMob () {
   }
 }
 
-function addFooterStysMob () {
+function addFooterStylesMob () {
   let footerEl = document.getElementById('footer')
   footerEl.classList.add('footer_mobile')
 }
@@ -78,7 +78,7 @@ function adjPhotoMob () {
 }
 
 let sideBar = document.getElementById('side_bar')
-let main = document.getElementById('main')
+let main = document.getElementById('home')
 let hamburger = document.getElementById('hamburger')
 let footer = document.getElementById('footer')
 

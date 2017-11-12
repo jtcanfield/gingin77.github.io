@@ -32,7 +32,7 @@
         <div class="close_button removeOnMobile" onclick="menuClose()" ><i class="fa fa-times" aria-hidden="true"></i>
         </div>
         <ul>
-          <li class="removeOnMobile"><a href="#home">Home</i></a></li>
+          <li class="removeOnMobile"><a href="#home">Home</a></li>
           <dl>
             <dt>Resume</dt>
             <dd class="removeOnMobile"><a href='resume.html'>View <i class="fa fa-external-link" aria-hidden="true"></i></a></dd>
@@ -50,7 +50,7 @@
         </div>
       </div>
     </nav>
-    <header id="home">
+    <header>
       <div id="hamburger" onclick="menuOpen()" class="removeOnMobile">
         <span class='hamburger'></span>
         <span class='hamburger'></span>
@@ -62,33 +62,32 @@
         <a href="mailto:ginniehench@gmail.com">ginniehench@gmail.com</a>
       </div>
     </header>
-    <section id="main">
+    <section id="home">
       <div class="height_filler">
       </div>
-      <div id="about" class="anchor">
-        <div id="about_wrapper">
-          <p id="about_centered">Thanks for stopping by!
+      <span class="anchor" id="about"></span>
+      <div class="topic">
+        <p class="centered_p">Thanks for stopping by!
+        </p>
+        <p>
+          I’m a Junior Web Developer with a passion for building apps that are functional and visually appealing.
+        </p>
+        <p>
+          I previously worked in the life science industry. I decided to pursue web development because I wanted a new career where technical problem solving would be a bigger part of of my daily routine. I completed The Iron Yard’s immersive, full-stack developer
+          course in October, 2017.
+        </p>
+        <p>
+          I love the feeling of satisfaction I get from resolving bugs in just a few lines of code, as well as the thrill that comes with delivering a beautiful, effective web product. I’m looking for an opportunity to contribute my skills and continue to grow
+          as a developer.
+          <p>
+            My resume is available on the side bar to the left (see button at top). Feel free to connect with me via email at <a href="mailto:ginniehench@gmail.com">ginniehench@gmail.com</a> or on <a href="https://www.linkedin.com/in/ginnie-hench-280353b">LinkedIn</a>
           </p>
           <p>
-            I’m a Junior Web Developer with a passion for building apps that are functional and visually appealing.
+            I’m still adding features to this site, so stop back again soon!
           </p>
           <p>
-            I previously worked in the life science industry. I decided to pursue web development because I wanted a new career where technical problem solving would be a bigger part of of my daily routine. I completed The Iron Yard’s immersive, full-stack developer
-            course in October, 2017.
+            Cheers!
           </p>
-          <p>
-            I love the feeling of satisfaction I get from resolving bugs in just a few lines of code, as well as the thrill that comes with delivering a beautiful, effective web product. I’m looking for an opportunity to contribute my skills and continue to grow
-            as a developer.
-            <p>
-              My resume is available on the side bar to the left (see button at top). Feel free to connect with me via email at <a href="mailto:ginniehench@gmail.com">ginniehench@gmail.com</a> or on <a href="https://www.linkedin.com/in/ginnie-hench-280353b">LinkedIn</a>
-            </p>
-            <p>
-              I’m still adding features to this site, so stop back again soon!
-            </p>
-            <p>
-              Cheers!
-            </p>
-        </div>
       </div>
       <div id="image_holder" class="image_holder">
         <div class="connect_icons_outer">
@@ -101,21 +100,20 @@
           </div>
         </div>
       </div>
-      <div id="skills" class="anchor">
-        <div id="skills_wrapper">
-          <p id="about_centered">Skills</p>
-          <img src="images/skills_11.10.17.png" />
-          <p id="caption">The graphic above is based on GitHub's data. I snapped the screenshot from a Sinatra/Ruby app I hosted locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
-        </div>
+      <span class="anchor" id="skills"></span>
+      <div class="topic">
+        <p class="centered_p">Skills</p>
+        <img id="skills_img" src="images/skills_11.10.17.png" />
+        <p id="caption">The graphic above is based on GitHub's data. I snapped the screenshot from a Sinatra/Ruby app I hosted locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
       </div>
-      <div id="portfolio" class="anchor">
-        <div id="portfolio_wrapper">
-          <p id="about_centered">Portfolio
-          </p>
-          <p id="last_portfolio_p">This section of the site is still under construction, but will be available soon. In the meantime, please checkout the pinned repos on my GitHub site <a href="https://github.com/gingin77">github.com/gingin77 <i class="fa fa-github" aria-hidden="true"></i></a></p>
-        </div>
-        <div class="filler">
-        </div>
+      <span class="anchor" id="portfolio"></span>
+      <div class="topic">
+        <p class="centered_p">Portfolio
+        </p>
+        <p id="last_portfolio_p">This section of the site is still under construction, but will be available soon. In the meantime, please checkout the pinned repos on my GitHub site <a href="https://github.com/gingin77">github.com/gingin77 <i class="fa fa-github" aria-hidden="true"></i></a></p>
+        <a href="#home">Home</a>
+      </div>
+      <div class="filler">
       </div>
     </section>
     <footer id="footer">

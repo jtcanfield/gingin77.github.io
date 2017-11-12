@@ -84,12 +84,6 @@ p {
   font-size: 1.2em;
 }
 
-.anchor {
-  display:block;
-  padding-top: 150px;
-  margin-top: -70px;
-}
-
 #resume{
   height: 100vh;
 }
@@ -173,19 +167,20 @@ dd {
 }
 
 header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 25;
   width: 100%;
   margin: auto;
+  background: #FEFDFE;
+  padding: 1%;
+  box-shadow: 0 0px 3px rgba( 0,0,0,0.45);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  right: 0;
-  z-index: 25;
-  background: #FEFDFE;
-  left: 0;
-  padding: 1%;
-  box-shadow: 0 0px 3px rgba( 0,0,0,0.45);
 }
 
 #hamburger{
@@ -243,10 +238,11 @@ section {
 }
 
 .height_filler{
-  height: 94px;
+  height: 150px;
 }
 
-#about_wrapper, #portfolio_wrapper, #skills_wrapper{
+.topic{
+  position: relative;
   margin: 0 1em;
   text-align: justify;
   display: flex;
@@ -255,11 +251,14 @@ section {
   justify-content: center;
 }
 
-/*#about_wrapper{
-  margin-top: 30px;
-}*/
+.anchor{
+  display: block;
+  height: 150px; /*same height as header*/
+  margin-top: -150px; /*same height as header*/
+  visibility: hidden;
+}
 
-#about_centered{
+.centered_p{
   font-weight: 400;
   text-align: center;
   font-size: 2em;
@@ -274,6 +273,7 @@ section {
   background-position-y: 80px;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 1em;
 }
 
 .image_holder_mob{
@@ -300,7 +300,7 @@ section {
   color: white;
 }
 
-#skills_wrapper img{
+#skills_img{
   width: 100%;
   height: auto;
   max-width: 520px;
@@ -350,14 +350,14 @@ footer{
 }
 
 .filler{
-  height: 300px;
+  height: 400px;
 }
 
-/*    Mobile       */
+/*    Replace Mobile Styles with the Desktop settings below      */
 @media (min-width: 500px) {
-  .anchor {
-    padding-top:100px;
-    margin-top:-60px;
+  .anchor{
+    height: 98px;
+    margin-top: -98px;
   }
 
   #loader {
@@ -395,16 +395,13 @@ footer{
     padding: 0 2%;
   }
 
-  #about_centered{
-    font-size: 2em;
+  .height_filler{
+    height: 98px;
   }
 
-  #about_wrapper, #portfolio_wrapper, #skills_wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0px;
+  .centered_p{
+    font-size: 2em;
+    margin-top: 1em;
   }
 
   #caption {
@@ -420,7 +417,7 @@ footer{
     margin-bottom: 200px;
   }
 
-  #skills_wrapper img{
+  #skills_img{
     width: 60%;
   }
 
@@ -434,9 +431,5 @@ footer{
 
   p {
     width: 600px;
-  }
-
-  #skills_wrapper img{
-    width: 60%;
   }
 }
