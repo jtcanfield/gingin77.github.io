@@ -294,7 +294,7 @@ section {
 }
 
 #image_holder .connect_icons_outer {
-  margin-top: 50px;
+  /*margin-top: 50px;*/
 }
 
 #image_holder a {
@@ -516,11 +516,34 @@ footer{
   }
 }
 
-@media (min-height: 1200px){
+@media (min-height: 680px){
   .topic{
     min-height: 100vh;
   }
 
+  .show_icons_below_first{
+    min-height: 68vh;
+  }
+
+  .show_icons_below_last{
+    min-height: 80vh;
+  }
+
+  .connect_icons_outer{
+    margin-top: 0;
+  }
+
+  .connect_icons {
+    padding-top: 8.5vh;
+  }
+
+  .image_holder{
+    min-height: 20vh;
+    background-position-y: 10vh;
+  }
+}
+
+@media (min-height: 1200px){
   .show_icons_below_first{
     min-height: 78vh;
   }
@@ -529,7 +552,12 @@ footer{
     min-height: 88vh;
   }
 
-  .connect_icons_outer{
-    margin-top: 0;
+  .image_holder{
+    min-height: 14vh;
   }
+
+  .connect_icons {
+    padding-top: 6vh;
+  }
+
 }
