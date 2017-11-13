@@ -78,7 +78,8 @@ a {
 }
 
 a:hover {
-  color: #504494;
+  color: #a19fae;
+  font-weight: 400;
 }
 
 p {
