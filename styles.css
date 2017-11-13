@@ -515,3 +515,21 @@ footer{
     width: 600px;
   }
 }
+
+@media (min-height: 1200px){
+  .topic{
+    min-height: 100vh;
+  }
+
+  .show_icons_below_first{
+    min-height: 78vh;
+  }
+
+  .show_icons_below_last{
+    min-height: 88vh;
+  }
+
+  .connect_icons_outer{
+    margin-top: 0;
+  }
+}
