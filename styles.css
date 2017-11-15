@@ -171,10 +171,10 @@ dd {
   max-height: 80px;
 }
 
-#logo_dk{
+/*#logo_dk{
   width: 40px;
-  /*visibility: hidden;*/
-}
+  /*visibility: hidden;
+}*/
 
 header {
   position: fixed;
