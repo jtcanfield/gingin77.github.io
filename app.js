@@ -59,7 +59,19 @@ function adjustForSmallVP () {
   adjPhotoMob()
   addFooterStylesMob()
   modResMob()
+  // addLogo()
 }
+
+// function addLogo () {
+//   let newLogo = document.getElementById('logo_dk')
+//   if (newLogo === null) {
+//     hamburger.onclick = null
+//     newLogo = document.createElement('img')
+//     newLogo.setAttribute('src', 'images/Initials_drk_on_lt.png')
+//     newLogo.id = 'logo_dk'
+//     hamburger.appendChild(newLogo)
+//   }
+// }
 
 function modResMob () {
   let parent = document.getElementsByTagName('ul')[0]
