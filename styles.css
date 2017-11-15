@@ -116,7 +116,7 @@ p {
   margin: 10px 0;
 }
 
-#side_bar li, #side_bar dt, #side_bar dd {
+li, dt, dd {
   color: #c9c9c9;
   font-size: 1.1em;
   font-weight: 300;
@@ -133,6 +133,7 @@ dt {
 }
 
 dd {
+  margin: 0 0 0 20px;
   -webkit-margin-start: 20px;
   padding: 3% 0;
   font-size: 1em;
@@ -147,27 +148,32 @@ dd {
 }
 
 #side_bar .close_button {
-    color: #c9c9c9;
-    position: absolute;
-    top: 50px;
-    right: 15px;
-    font-size: 1.5em;
-    margin-left: 50px;
+  color: #c9c9c9;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  font-size: 1.5em;
+  margin-left: 50px;
 }
 
 .logo{
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  flex: 2;
+  /*flex: 2;*/
 }
 
 #logo {
-  width: 10vw;
-  height: auto;
-  padding: 10%;
+  width: auto;
+  height: 12vh;
+  padding: 10px;
   max-width: 80px;
   max-height: 80px;
+}
+
+#logo_dk{
+  width: 40px;
+  /*visibility: hidden;*/
 }
 
 header {
@@ -214,6 +220,7 @@ h1{
   font-weight: 400;
   /*font-size: 4em;*/
   color: #060026;
+  margin: 0;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   text-align: right;
@@ -431,17 +438,19 @@ footer{
     top: 0;
     left: 0;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   #side_bar ul{
     flex-direction: column;
     align-items: start;
     -webkit-padding-start: 20px;
+    padding-left: 20px;
     margin: 60px 0 0;
   }
 
-  #side_bar li, #side_bar dt, #side_bar dd {
-    padding: 8% 0;
+  li, dt, dd {
+    padding: 16px 0;
     font-size: 1.5em;
   }
 
