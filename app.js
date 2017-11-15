@@ -6,20 +6,21 @@ let contents = document.getElementById('contents')
 
 document.onreadystatechange = function () {
   var state = document.readyState
+  console.log(state)
   if (viewportWidth > 500) {
     if (state === 'interactive') {
-      loader.classList.add('fadeIn')
-      contents.classList.add('fadeOut')
+      console.log(state)
       alignContactPhotoNonMob()
     } else if (state === 'complete') {
       setTimeout(function () {
+        console.log(state)
         loader.classList.remove('fadeIn')
         loader.classList.add('fadeOut')
         showContents()
-        loader.remove()
       }, 500)
     }
   } else {
+    contents.classList.remove('not_visible')
     adjustForSmallVP()
     loader.remove()
   }
@@ -32,15 +33,13 @@ function adjustIfNeeded () {
     adjustForSmallVP()
   } else {
     alignContactPhotoNonMob()
-    console.log('Contact photo adjustment needed')
   }
 }
 
 function showContents () {
   setTimeout(function () {
-    contents.classList.remove('fadeOut')
-    contents.classList.add('fadeIn')
-  }, 100)
+    contents.classList.remove('not_visible')
+  }, 500)
 }
 
 function alignContactPhotoNonMob () {

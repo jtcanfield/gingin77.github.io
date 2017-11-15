@@ -31,11 +31,15 @@ Variations on grey/white used:
   height: 80px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
-  transition: 200ms opacity;
 }
 
 #contents {
-  transition: 2s opacity;
+  transition: 5s opacity;
+}
+
+.not_visible{
+  visibility: hidden;
+  opacity: 0;
 }
 
 @-webkit-keyframes spin {
@@ -49,16 +53,20 @@ Variations on grey/white used:
 }
 
 .fadeOut {
+  -moz-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
   opacity: 0;
 }
-
+/*
 .fadein {
-    opacity: 1;
-    -moz-transition: opacity 1.5s;
-    -webkit-transition: opacity 1.5s;
-    -o-transition: opacity 1.5s;
-    transition: opacity 1.5s;
-}
+  opacity: 1;
+  -moz-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}*/
 
 body{
   margin: auto 0px;
