@@ -34,7 +34,7 @@ Variations on grey/white used:
 }
 
 #contents {
-  transition: 5s opacity;
+  transition: 1.5s opacity;
 }
 
 .not_visible{
@@ -53,10 +53,10 @@ Variations on grey/white used:
 }
 
 .fadeOut {
-  -moz-transition: opacity 1s;
-  -webkit-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s;
+  -moz-transition: opacity 1.5s;
+  -webkit-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s;
   opacity: 0;
 }
 /*
