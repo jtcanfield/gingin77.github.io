@@ -1,23 +1,17 @@
-window.addEventListener('resize', adjustIfNeeded)
 let viewportWidth = window.innerWidth
-
 let loader = document.getElementById('loader')
 let contents = document.getElementById('contents')
 
 document.onreadystatechange = function () {
   var state = document.readyState
-  console.log(state)
   if (viewportWidth > 500) {
     if (state === 'interactive') {
-      console.log(state)
       alignContactPhotoNonMob()
     } else if (state === 'complete') {
       setTimeout(function () {
-        console.log(state)
-        loader.classList.remove('fadeIn')
         loader.classList.add('fadeOut')
         showContents()
-      }, 500)
+      }, 200)
     }
   } else {
     contents.classList.remove('not_visible')
@@ -25,6 +19,8 @@ document.onreadystatechange = function () {
     loader.remove()
   }
 }
+
+window.addEventListener('resize', adjustIfNeeded)
 
 function adjustIfNeeded () {
   viewportWidth = window.innerWidth
@@ -39,7 +35,14 @@ function adjustIfNeeded () {
 function showContents () {
   setTimeout(function () {
     contents.classList.remove('not_visible')
-  }, 500)
+    removeLoader()
+  }, 200)
+}
+
+function removeLoader () {
+  setTimeout(function () {
+    loader.remove()
+  }, 100)
 }
 
 function alignContactPhotoNonMob () {
@@ -58,19 +61,7 @@ function adjustForSmallVP () {
   adjPhotoMob()
   addFooterStylesMob()
   modResMob()
-  // addLogo()
 }
-
-// function addLogo () {
-//   let newLogo = document.getElementById('logo_dk')
-//   if (newLogo === null) {
-//     hamburger.onclick = null
-//     newLogo = document.createElement('img')
-//     newLogo.setAttribute('src', 'images/Initials_drk_on_lt.png')
-//     newLogo.id = 'logo_dk'
-//     hamburger.appendChild(newLogo)
-//   }
-// }
 
 function modResMob () {
   let parent = document.getElementsByTagName('ul')[0]
