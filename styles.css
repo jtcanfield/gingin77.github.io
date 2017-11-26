@@ -318,10 +318,68 @@ section {
   max-width: 600px;
 }
 
-#caption {
-  font-style: italic;
-  margin: 0.3em 0 1.5em 0;
+/*  Styles related to svg    */
+svg {
+  padding: 20px;
+}
+
+rect {
+  fill: #060026;
+}
+
+text {
+  fill: black;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.graphic_title{
+  text-align: center;
   font-size: 1.2em;
+}
+
+h3 {
+  text-align: center;
+}
+
+.label {
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  fill: black;
+  z-index: 10;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #F6F5F6;
+  opacity: 0.5;
+  width: 100px;
+  height: 28px;
+  pointer-events: none;
+  font-size: small;
+}
+
+.legend_label {
+  font-size: 12px;
+}
+
+.svg_caption{
+
+}
+/*  End of styles related to svg    */
+
+.caption {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+.c_above{
+  margin: 0.3em 0 0 0;
+  margin-bottom: 1.5em;
+}
+
+.c_below{
+  margin: 0.3em 0 1.5em 0;
 }
 
 .connect_wrapper {
@@ -453,8 +511,15 @@ footer{
     margin-top: 1em;
   }
 
-  #caption {
+  .caption {
     max-width: 600px;
+  }
+
+  /*.c_above{
+    margin: 0.3em 0 0 0;
+  }*/
+
+  .c_below{
     margin-bottom: 100px;
   }
 
