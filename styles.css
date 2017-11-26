@@ -320,7 +320,7 @@ section {
 
 /*  Styles related to svg    */
 svg {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 rect {

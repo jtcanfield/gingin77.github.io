@@ -75,7 +75,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
   let margin = {
       top: 10,
       right: 56,
-      bottom: 160,
+      bottom: 40,
       left: 16
     },
     width = 600 - margin.left,
@@ -192,32 +192,18 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
   let maxCount = d3.max(langBytesFirst, function (d) { return d.count }),
     otLrName = langBytesFirst.filter(obj => obj.count === maxCount)[0].repo_name,
     otLrLang = langBytesFirst.filter(obj => obj.count === maxCount)[0].language,
-    otLrDate = new Date (langBytesFirst.filter(obj => obj.count === maxCount)[0].pushed_at)
+    otLrDate = new Date (langBytesFirst.filter(obj => obj.count === maxCount)[0].pushed_at),
+    dateFormatter = d3.timeFormat('%B %e')
+    countFormatter = d3.format(',.3r')
 
-    console.log(otLrLang)
-
-  //  Assign caption that id's outliers
-  let caption = svg.selectAll('text')
-    .data(langBytesFirst)
-    .enter()
-
-  // let wrap = d3.textwrap()
-  //   .bounds({ height: margin.bottom, width: width })
-  //   .padding(10)
-  //
-  // caption.append('text')
-  //   .attr('class', 'svg_caption')
-  //   .attr('x', 4)
-  //   .attr('y', height + margin.bottom / 4)
-  //   // .attr('dy', '.35em')
-  //   .style('text-anchor', 'start')
-  //   .text('There was a single outlier datapoint that is not shown in the scatter plot above. The ' + otLrLang + ' counts for the project, ' + otLrName + ' (the code for this site) was far outside the range of databytes stored for the other project languages. For other language data points for this project, look at data aligned with ' + otLrDate + '. The ' + otLrLang + ' byte count for ' + otLrName + ' was ' + maxCount + ' bytes.')
-  //   .call(wrap)
-      // .html()
-
-    // //Add SVG Text Element Attributes
-    // var textLabels = text
-    //   .attr("x", function(d) { return d.cx; })
-    //   .attr("y", function(d) { return d.cy; })
-    //   .text( function (d) { return "( " + d.cx + ", " + d.cy +" )"; })
+  let captionTarget = document.getElementById('for_svg')
+  let svgOutlierNote = document.createElement('div')
+  svgOutlierNote.classList.add('div_svg_caption')
+  svgOutlierNote.innerHTML = `
+    <p class="c_above caption">There was a single outlier datapoint that is not shown in the scatter plot above. The ${otLrLang} counts for the project, ${otLrName} (the code for this site) are too far outside the range of databytes stored for the other project languages. To see other language data points for this project, look at data aligned with ${dateFormatter(otLrDate)}.
+    </p>
+    <p class="c_above caption">
+    The ${otLrLang} byte count for ${otLrName} is around ${countFormatter(maxCount)} bytes.
+     </p>`
+  captionTarget.appendChild(svgOutlierNote)
 })
