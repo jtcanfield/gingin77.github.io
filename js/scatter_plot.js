@@ -76,7 +76,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
       top: 10,
       right: 56,
       bottom: 40,
-      left: 16
+      left: 8
     },
     width = 600 - margin.left,
     height = 380 - margin.top - margin.bottom
@@ -116,7 +116,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
     .append('text')
     .attr('class', 'label')
     .attr('transform', 'rotate(-90)')
-    .attr('y', (-1 * margin.right))
+    .attr('y', (-1 * margin.right + 6))
     .attr('x', 0 - (height / 2))
     .attr('dy', '1em')
     .style('text-anchor', 'middle')
@@ -162,7 +162,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
     })
 
   let lcolor = d3.scaleOrdinal()
-    .domain(['JavaScript', 'Ruby', 'CSS', 'HTML', 'CoffeeScript/Shell'])
+    .domain(['JS', 'Ruby', 'CSS', 'HTML', 'Misc'])
     .range([blue, rubyred, purple, peach, grey])
 
   let legend = svg.selectAll('.legend')
@@ -200,10 +200,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
   let svgOutlierNote = document.createElement('div')
   svgOutlierNote.classList.add('div_svg_caption')
   svgOutlierNote.innerHTML = `
-    <p class="c_above caption">There was a single outlier datapoint that is not shown in the scatter plot above. The ${otLrLang} counts for the project, ${otLrName} (the code for this site) are too far outside the range of databytes stored for the other project languages. To see other language data points for this project, look at data aligned with ${dateFormatter(otLrDate)}.
-    </p>
-    <p class="c_above caption">
-    The ${otLrLang} byte count for ${otLrName} is around ${countFormatter(maxCount)} bytes.
-     </p>`
+    <span class="c_above caption">There was a single outlying datapoint that is not shown in the scatter plot above. The ${otLrLang} counts for the project, ${otLrName} (the code for this webpage) are too far outside the range of databytes stored for the other project languages. To see other language data points for this page, look for data points associated with ${dateFormatter(otLrDate)}. The ${otLrLang} byte count for ${otLrName} is around ${countFormatter(maxCount)} bytes.
+     </span>`
   captionTarget.appendChild(svgOutlierNote)
 })

@@ -320,7 +320,7 @@ section {
 
 /*  Styles related to svg    */
 svg {
-  padding: 20px 0;
+  padding: 20px 0 5px;
 }
 
 rect {
@@ -363,8 +363,12 @@ h3 {
   font-size: 12px;
 }
 
-.svg_caption{
-
+.div_svg_caption span{
+  font-size: 0.9em;
+  font-style: italic;
+  width: 480px;
+  display: inline-block;
+  padding: 0 40px 0 80px;
 }
 /*  End of styles related to svg    */
 
