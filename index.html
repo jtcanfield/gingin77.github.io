@@ -122,7 +122,7 @@
             <span class="bold_header">Languages: </span>JavaScript, Ruby/Ruby on Rails, HTML, CSS, NodeJS, SQL
           </p>
           <p>
-            <span class="bold_header">Tools and Operations: </span>REST API’s, Heroku, Git, GitHub
+            <span class="bold_header">Tools and Operations: </span>REST API’s, Heroku, Git/GitHub
           </p>
           <p>
             <span class="bold_header">JavaScript libraries: </span>D3.js for data visualization, Datejs, Jquery
@@ -133,13 +133,20 @@
           <p>
             <span class="bold_header">Node Modules: </span>Express with Validator, Passport, Express-Session, Cookie-Session, Mustache, MongoDB, Mongoose
           </p>
+          <div class='clip_image_holder'>
+            <p id="scroll_message">Scroll down to see interactive skills graph</p>
+            <img id="snippet_img" src="images/Screen_Shot_2017-11-26_sctrplot.png" />
+          </div>
         </div>
+      </div>
+      <span class="anchor" id="skills_graph"></span>
+      <div class="topic p_600_max">
         <span class="bold_header graphic_title">Programming Language Distributions for GitHub Project Repos</span>
         <div id="for_svg"></div>
-        <p class="caption c_above">The scatter plot above usees data pulled from GitHub's REST API and was constructed using the D3.js library (D3 = Data-Driven Documents).<span class="bold_header"> To see the language and project repository names, just hover over each data point.</span><a href="https://github.com/gingin77/gh_rest_api_fetch"> The code is available on GitHub. <i class="fa fa-github" aria-hidden="true"></i></a>
+        <p class="caption c_above">The scatter plot above usees data pulled from GitHub's REST API and was constructed using the D3.js library (D3 = Data-Driven Documents).<span class="bold_header"> To see the language and project repository names, hover over each data point.</span><a href="https://github.com/gingin77/gh_rest_api_fetch"> The code is available on GitHub. <i class="fa fa-github" aria-hidden="true"></i></a>
         </p>
-        <p class="caption c_below">The graphics below are based on the same data used for the scatterplot. I snapped the screenshot from a Sinatra/Ruby app I hosted locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
-        <img id="skills_img" src="images/skills_11.10.17.png" />
+        <p class="caption c_below">The bar graph and treemap below are based on the same data source as the scatterplot. I snapped the screenshot from a Sinatra/Ruby app I host locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
+        <img id="skills_img" src="images/Screen_shot_2017-11-26.png" />
       </div>
       <span class="anchor" id="portfolio"></span>
       <div class="topic p_600_max">
@@ -224,8 +231,8 @@
         </div>
       </div>
     </footer>
-  </div>
-  <script type="application/javascript" src="app.js"></script>
+  </>
+  <script type="application/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/scatter_plot.js"></script>
 </body>
 

@@ -312,6 +312,24 @@ section {
   text-align: left;
 }
 
+.clip_image_holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scroll_message{
+  text-align: center;
+  font-style: italic;
+}
+
+#snippet_img{
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin-top: 40px;
+}
+
 #skills_img{
   width: 100%;
   height: auto;
@@ -379,11 +397,11 @@ h3 {
 
 .c_above{
   margin: 0.3em 0 0 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.0em;
 }
 
 .c_below{
-  margin: 0.3em 0 1.5em 0;
+  margin: 0.3em 0 0.8em 0;
 }
 
 .connect_wrapper {
@@ -523,9 +541,9 @@ footer{
     margin: 0.3em 0 0 0;
   }*/
 
-  .c_below{
+  /*.c_below{
     margin-bottom: 100px;
-  }
+  }*/
 
   .p_600_max a{
     color: #504494;

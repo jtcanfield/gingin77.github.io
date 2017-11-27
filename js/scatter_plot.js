@@ -143,7 +143,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
   svg.selectAll('dot')
     .data(langBytesFirst)
     .enter().append('circle')
-    .attr('r', 3.5)
+    .attr('r', 4.5)
     .attr('cx', xValue)
     .attr('cy', yValue)
     .style('fill', function (d) { return color(cValue(d)) })
@@ -200,7 +200,7 @@ d3.json('static_data/compObj_46_repos.json', function (data) {
   let svgOutlierNote = document.createElement('div')
   svgOutlierNote.classList.add('div_svg_caption')
   svgOutlierNote.innerHTML = `
-    <span class="c_above caption">There was a single outlying datapoint that is not shown in the scatter plot above. The ${otLrLang} counts for the project, ${otLrName} (the code for this webpage) are too far outside the range of databytes stored for the other project languages. To see other language data points for this page, look for data points associated with ${dateFormatter(otLrDate)}. The ${otLrLang} byte count for ${otLrName} is around ${countFormatter(maxCount)} bytes.
+    <span class="c_above caption">There is a single outlier datapoint not shown in the scatter plot above. The ${otLrLang} byte count for ${otLrName} (the code for this webpage) is around ${countFormatter(maxCount)} bytes. To see language data points for this project, look for data points associated with ${dateFormatter(otLrDate)}.
      </span>`
   captionTarget.appendChild(svgOutlierNote)
 })
