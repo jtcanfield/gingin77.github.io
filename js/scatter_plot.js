@@ -1,6 +1,6 @@
 // let inPageData =
 
-d3.json('static_data/compObj_46_repos.json', function (data) {
+d3.json('static_data/compObj_46_11_27.json', function (data) {
   console.log(data)
   function strToDtSingle (d) {
     return new Date(d)
