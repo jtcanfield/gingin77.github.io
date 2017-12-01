@@ -350,9 +350,15 @@ text {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+.skills_graph_title{
+  font-size: 1.8em;
+  font-weight: 400;
+  text-align: center;
+}
+
 .graphic_title{
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 
 h3 {
@@ -384,9 +390,12 @@ h3 {
 .div_svg_caption p{
   font-size: 0.9em;
   font-style: italic;
+  color: #457DB7;
   width: 480px;
   display: inline-block;
+  margin: 40px 0 4px 0;
   padding: 0 40px 0 80px;
+  text-align: center;
 }
 /*  End of styles related to svg    */
 

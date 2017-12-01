@@ -6,7 +6,7 @@ let existingArray = []
 drawScatterPlot()
 
 // Retrieve data and initiate comparison with data requested from external API
-d3.json('static_data/langBytesFirst.json', function (error, data) {
+d3.json('static_data/langBytesFirst_12_1.json', function (error, data) {
   if (error) {
     return console.warn(error)
   }
@@ -19,18 +19,19 @@ d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', funct
   if (error) {
     return console.warn(error)
   }
-  for (let i = 0; i < dataObj.length; i++) {
+  dataObj.map(function (item) {
     let langObj = {}
-    langObj.repo_name = dataObj[i].name
-    langObj.primary_repo_lang = dataObj[i].language
-    langObj.url_for_all_repo_langs = dataObj[i].languages_url
-    langObj.created_at = dataObj[i].created_at
-    langObj.pushed_at = dataObj[i].pushed_at
+    langObj.repo_name = item.name
+    langObj.primary_repo_lang = item.language
+    langObj.url_for_all_repo_langs = item.languages_url
+    langObj.created_at = item.created_at
+    langObj.pushed_at = item.pushed_at
 
     arrayOfLangObjs.push(langObj)
 
-    repoPrimryLang.push(dataObj[i].language)
-  }
+    repoPrimryLang.push(item.language)
+  })
+  console.log(arrayOfLangObjs)
   evalIfArrysNotNull(arrayOfLangObjs, existingArray)
 })
 
@@ -153,22 +154,22 @@ function evalLangBytArrStatus () {
 let comprehensiveObjArr = []
 function buildComprehensiveObj (array1, array2) {
   let comprehensiveObj = {}
-  for (let i = 0; i < array1.length; i++) {
-    let compare = array1[i].url_for_all_repo_langs
-    for (let q = 0; q < array2.length; q++) {
-      if (compare === array2[q].url_for_all_repo_langs) {
+  array1.map(function (array1item) {
+    let compare = array1item.url_for_all_repo_langs
+    array2.map(function (array2item) {
+      if (compare === array2item.url_for_all_repo_langs) {
         comprehensiveObj = {
-          repo_name: array1[i].repo_name,
-          url_for_all_repo_langs: array1[i].url_for_all_repo_langs,
-          primary_repo_lang: array1[i].primary_repo_lang,
-          created_at: array1[i].created_at,
-          pushed_at: array1[i].pushed_at,
-          all_lang_bytes_for_repo: array2[q].all_lang_bytes_for_repo
+          repo_name: array1item.repo_name,
+          url_for_all_repo_langs: array1item.url_for_all_repo_langs,
+          primary_repo_lang: array1item.primary_repo_lang,
+          created_at: array1item.created_at,
+          pushed_at: array1item.pushed_at,
+          all_lang_bytes_for_repo: array2item.all_lang_bytes_for_repo
         }
         comprehensiveObjArr.push(comprehensiveObj)
       }
-    }
-  }
+    })
+  })
   transformLangObj(comprehensiveObjArr)
 }
 
@@ -228,6 +229,7 @@ let combineNewWithExistComplete = false
 
 function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeep) {
   updatedCompObj = existingObjsToKeep.concat(newDataObjsArr)
+  console.log(updatedCompObj)
   combineNewWithExistComplete = true
   drawScatterPlot()
 }
@@ -244,7 +246,7 @@ function drawScatterPlot () {
     }
   }
 
-  d3.json('static_data/langBytesFirst.json', function (error, data) {
+  d3.json('static_data/langBytesFirst_12_1.json', function (error, data) {
     if (error) {
       return console.warn(error)
     }
@@ -292,7 +294,7 @@ function drawScatterPlot () {
       xAxis = d3.axisBottom(xScale).ticks(d3.timeWeek.every(2)).tickFormat(d3.timeFormat('%b %e'))
 
     // setup y
-    let yScale = d3.scaleLinear().domain([0, 82000]).range([height - 2, 0]),
+    let yScale = d3.scaleLinear().domain([0, 72000]).range([height - 2, 0]),
       yValue = function (d) { return yScale(d.count) },
       yAxis = d3.axisLeft(yScale).tickFormat(d3.format('0.2s'))
 
@@ -394,22 +396,22 @@ function drawScatterPlot () {
       .style('text-anchor', 'start')
       .text(function (d) { return d })
 
-    // Set up variables to define outline properties
-    let maxCount = d3.max(myData, function (d) { return d.count }),
-      otLrName = myData.filter(obj => obj.count === maxCount)[0].repo_name,
-      otLrLang = myData.filter(obj => obj.count === maxCount)[0].language,
-      otLrDate = new Date (myData.filter(obj => obj.count === maxCount)[0].pushed_at),
-      dateFormatter = d3.timeFormat('%B %e')
-      countFormatter = d3.format(',.3r')
-
-    let captionTarget = document.getElementById('for_svg')
-    let svgOutlierNote = document.createElement('div')
-    svgOutlierNote.classList.add('div_svg_caption')
-    svgOutlierNote.innerHTML = `
-      <p class="c_above caption">There is a single outlier datapoint not shown in the scatter plot above. The ${otLrLang} byte count for ${otLrName} (the code for this webpage) is around ${countFormatter(maxCount)} bytes. To see language data points for this project, look for data points associated with ${dateFormatter(otLrDate)}.<br />
-      <br />
-      <span class="bold_header">Hover over each data point for language and project repository names.<span>
-      </p>`
-    captionTarget.appendChild(svgOutlierNote)
+    // // Set up variables to define outline properties
+    // let maxCount = d3.max(myData, function (d) { return d.count }),
+    //   otLrName = myData.filter(obj => obj.count === maxCount)[0].repo_name,
+    //   otLrLang = myData.filter(obj => obj.count === maxCount)[0].language,
+    //   otLrDate = new Date (myData.filter(obj => obj.count === maxCount)[0].pushed_at),
+    //   dateFormatter = d3.timeFormat('%B %e')
+    //   countFormatter = d3.format(',.3r')
+    //
+    // let captionTarget = document.getElementById('for_svg')
+    // let svgOutlierNote = document.createElement('div')
+    // svgOutlierNote.classList.add('div_svg_caption')
+    // svgOutlierNote.innerHTML = `
+    //   <p class="c_above caption">There is a single outlier datapoint not shown in the scatter plot above. The ${otLrLang} byte count for ${otLrName} (the code for this webpage) is around ${countFormatter(maxCount)} bytes. To see language data points for this project, look for data points associated with ${dateFormatter(otLrDate)}.<br />
+    //   <br />
+    //   <span class="bold_header"><span>
+    //   </p>`
+    // captionTarget.appendChild(svgOutlierNote)
   })
 }
