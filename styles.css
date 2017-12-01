@@ -381,7 +381,7 @@ h3 {
   font-size: 12px;
 }
 
-.div_svg_caption span{
+.div_svg_caption p{
   font-size: 0.9em;
   font-style: italic;
   width: 480px;
@@ -587,7 +587,10 @@ footer{
   .p_600_max p {
     width: 600px;
   }
-}
+
+  .div_svg_caption p{
+    width: 480px;
+  }
 
 @media (min-height: 660px){
   .show_icons_below_first{

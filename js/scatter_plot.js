@@ -406,8 +406,10 @@ function drawScatterPlot () {
     let svgOutlierNote = document.createElement('div')
     svgOutlierNote.classList.add('div_svg_caption')
     svgOutlierNote.innerHTML = `
-      <span class="c_above caption">There is a single outlier datapoint not shown in the scatter plot above. The ${otLrLang} byte count for ${otLrName} (the code for this webpage) is around ${countFormatter(maxCount)} bytes. To see language data points for this project, look for data points associated with ${dateFormatter(otLrDate)}.
-       </span>`
+      <p class="c_above caption">There is a single outlier datapoint not shown in the scatter plot above. The ${otLrLang} byte count for ${otLrName} (the code for this webpage) is around ${countFormatter(maxCount)} bytes. To see language data points for this project, look for data points associated with ${dateFormatter(otLrDate)}.<br />
+      <br />
+      <span class="bold_header">Hover over each data point for language and project repository names.<span>
+      </p>`
     captionTarget.appendChild(svgOutlierNote)
   })
 }

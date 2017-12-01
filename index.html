@@ -10,19 +10,6 @@
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://d3js.org/d3-axis.v1.min.js"></script>
-  <script src="https://d3js.org/d3-collection.v1.min.js"></script>
-  <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
-  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
-  <script src="https://d3js.org/d3-request.v1.min.js"></script>
-  <script src="https://d3js.org/d3-array.v1.min.js"></script>
-  <script src="https://d3js.org/d3-color.v1.min.js"></script>
-  <script src="https://d3js.org/d3-format.v1.min.js"></script>
-  <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-  <script src="https://d3js.org/d3-scale.v1.min.js"></script>
-  <script src="https://d3js.org/d3-time.v1.min.js"></script>
-  <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
-  <script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
   <script type="text/javascript" src="js/date.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|400" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -141,9 +128,12 @@
       <div class="topic p_600_max">
         <span class="bold_header graphic_title">Programming Language Distributions for GitHub Project Repos</span>
         <div id="for_svg"></div>
-        <p class="caption c_above">The scatter plot above usees data pulled from GitHub's REST API and was constructed using the D3.js library (D3 = Data-Driven Documents).<span class="bold_header"> To see the language and project repository names, hover over each data point.</span><a href="https://github.com/gingin77/gh_rest_api_fetch"> The code is available on GitHub. <i class="fa fa-github" aria-hidden="true"></i></a>
+        <!-- <p>
+          <span class="bold_header"> For language and project repository names, hover over each data point.</span>
+        </p> -->
+        <p class="caption c_above">The scatter plot above uses data pulled from GitHub's REST API and was constructed using the D3.js library (D3 = Data-Driven Documents).<a href="https://github.com/gingin77/gh_rest_api_fetch"> The code is available on GitHub. <i class="fa fa-github" aria-hidden="true"></i></a>
         </p>
-        <p class="caption c_below">The bar graph and treemap below are based on the same data source as the scatterplot. I snapped the screenshot from a Sinatra/Ruby app I host locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
+        <p class="caption c_below">The bar graph and treemap below are based on the same data source as the scatterplot. The screenshot was snapped from a Sinatra/Ruby app I host locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
         <img id="skills_img" src="images/Screen_shot_2017-11-26.png" />
       </div>
       <span class="anchor" id="portfolio"></span>
