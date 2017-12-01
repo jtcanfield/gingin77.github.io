@@ -33,10 +33,6 @@ d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', funct
 
     repoPrimryLang.push(item.language)
   })
-<<<<<<< HEAD
-=======
-  console.log(arrayOfLangObjs)
->>>>>>> dad3ac4b27aba5e04206b1f82a9aacd02d3dc29b
   evalIfArrysNotNull(arrayOfLangObjs, existingArray)
 })
 
