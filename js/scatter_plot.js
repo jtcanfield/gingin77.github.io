@@ -11,26 +11,28 @@ d3.json('static_data/langBytesFirst.json', function (error, data) {
     return console.warn(error)
   }
   existingArray = data
+  console.log(existingArray)
   evalIfArrysNotNull(arrayOfLangObjs, existingArray)
 })
 
 // Request data from single endpoint in GitHub API, arrange data into object and compare new data objects with existing data objects
 d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', function (error, dataObj) {
+  console.log(dataObj)
   if (error) {
     return console.warn(error)
   }
-  for (let i = 0; i < dataObj.length; i++) {
+  dataObj.map(function (item) {
     let langObj = {}
-    langObj.repo_name = dataObj[i].name
-    langObj.primary_repo_lang = dataObj[i].language
-    langObj.url_for_all_repo_langs = dataObj[i].languages_url
-    langObj.created_at = dataObj[i].created_at
-    langObj.pushed_at = dataObj[i].pushed_at
+    langObj.repo_name = item.name
+    langObj.primary_repo_lang = item.language
+    langObj.url_for_all_repo_langs = item.languages_url
+    langObj.created_at = item.created_at
+    langObj.pushed_at = item.pushed_at
 
     arrayOfLangObjs.push(langObj)
 
-    repoPrimryLang.push(dataObj[i].language)
-  }
+    repoPrimryLang.push(item.language)
+  })
   evalIfArrysNotNull(arrayOfLangObjs, existingArray)
 })
 
@@ -228,6 +230,7 @@ let combineNewWithExistComplete = false
 
 function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeep) {
   updatedCompObj = existingObjsToKeep.concat(newDataObjsArr)
+  console.log(updatedCompObj)
   combineNewWithExistComplete = true
   drawScatterPlot()
 }
