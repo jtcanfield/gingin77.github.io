@@ -287,7 +287,7 @@ function drawScatterPlot () {
         left: 8
       },
       width = 600 - margin.left,
-      height = 380 - margin.top - margin.bottom
+      height = 340 - margin.top - margin.bottom
 
     // setup x
     let xScale = d3.scaleTime().domain([xMin, xMax]).range([margin.right, width - margin.left]),
