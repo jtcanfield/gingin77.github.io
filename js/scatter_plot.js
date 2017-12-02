@@ -6,7 +6,7 @@ let existingArray = []
 drawScatterPlot()
 
 // Retrieve data and initiate comparison with data requested from external API
-d3.json('static_data/langBytesFirst_12_1.json', function (error, data) {
+d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
   if (error) {
     return console.warn(error)
   }
@@ -62,6 +62,8 @@ function findNewRepos (newArray, existingArray) {
     }
   })
   newRepoUrlsToFetch = unMatchedObjs.map((obj) => obj.url_for_all_repo_langs)
+  console.log(`newRepoUrlsToFetch length: ${newRepoUrlsToFetch.length}`)
+  console.log(newRepoUrlsToFetch)
   findNewReposComplete = true
   compileURLsToFetch(newRepoUrlsToFetch, updatedRepoUrlsToFetch)
 }
@@ -90,6 +92,8 @@ function getURLsForUpdtdRepos (arr) {
   let UpdtdUrls = updatedObjsToFetch.map((obj) => obj.url_for_all_repo_langs)
   updatedRepoUrlsToFetch = elimateDuplicates(UpdtdUrls)
   getURLsForUpdtdReposComplete = true
+  console.log(`updatedRepoUrlsToFetch: ${updatedRepoUrlsToFetch.length}`)
+  console.log(updatedRepoUrlsToFetch)
   compileURLsToFetch(newRepoUrlsToFetch, updatedRepoUrlsToFetch)
 }
 
@@ -115,7 +119,7 @@ function splitArryToURLs (array) {
    for (let i = 0; i < array.length; i++) {
      let url = array[i]
      console.log(url)
-     getLanguageBytes(url)
+     // getLanguageBytes(url)
    }
  }
 
@@ -246,7 +250,7 @@ function drawScatterPlot () {
     }
   }
 
-  d3.json('static_data/langBytesFirst_12_1.json', function (error, data) {
+  d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     if (error) {
       return console.warn(error)
     }
