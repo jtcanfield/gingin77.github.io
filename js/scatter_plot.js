@@ -252,7 +252,7 @@ function drawScatterPlot () {
     let myData = []
     evalDataSetForD3(data, combineNewWithExistComplete)
 
-    // if new data is available (in the variable 'updatedCompObj'), it will be used in place of the existing data stored as 'data' and coming from the static_data/langBytesFirst.json
+    // if new data is available (in the variable 'updatedCompObj'), it will be used in place of the existing data stored as 'data' and coming from the static_data/updatedCompObj_12_2.json
     function evalDataSetForD3 (data, combineNewWithExistComplete) {
       if (combineNewWithExistComplete) {
         myData = updatedCompObj

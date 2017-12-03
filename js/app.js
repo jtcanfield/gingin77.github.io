@@ -49,7 +49,6 @@ function alignContactPhotoNonMob () {
   let self = document.getElementById('self')
   let connectMessage = document.getElementById('connect_message')
   let divToDelete = document.getElementById('self_img_holder')
-  undefined
   connectMessage.appendChild(self)
   if (divToDelete !== null) {
     divToDelete.remove()
