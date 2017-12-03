@@ -1,8 +1,8 @@
 let repoPrimryLang = []
-let arrayOfLangObjs = []
+let arOfRepoObjs = []
 let existingArray = []
 
-// Call function to draw scatter plot using static data
+// Call function to draw scatter plot which will use data stored within the app
 drawScatterPlot()
 
 // Retrieve data and initiate comparison with data requested from external API
@@ -11,7 +11,7 @@ d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     return console.warn(error)
   }
   existingArray = data
-  evalIfArrysNotNull(arrayOfLangObjs, existingArray)
+  evalIfArrysNotNull(arOfRepoObjs, existingArray)
 })
 
 // Request data from single endpoint in GitHub API, arrange data into object and compare new data objects with existing data objects
@@ -27,18 +27,18 @@ d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', funct
     langObj.created_at = item.created_at
     langObj.pushed_at = item.pushed_at
 
-    arrayOfLangObjs.push(langObj)
+    arOfRepoObjs.push(langObj)
 
     repoPrimryLang.push(item.language)
   })
-  evalIfArrysNotNull(arrayOfLangObjs, existingArray)
+  evalIfArrysNotNull(arOfRepoObjs, existingArray)
 })
 
 // Function evaluates whether both arrays have contents
 function evalIfArrysNotNull () {
-  if (arrayOfLangObjs.length !== 0 && existingArray.length !== 0) {
-    findNewRepos(arrayOfLangObjs, existingArray)
-    findUpdatedRepos(arrayOfLangObjs, existingArray)
+  if (arOfRepoObjs.length !== 0 && existingArray.length !== 0) {
+    findNewRepos(arOfRepoObjs, existingArray)
+    findUpdatedRepos(arOfRepoObjs, existingArray)
   }
 }
 
@@ -65,7 +65,7 @@ function findNewRepos (newArray, existingArray) {
   compileURLsToFetch(newRepoUrlsToFetch, updatedRepoUrlsToFetch)
 }
 
-// Check to see if push dates differ; if not save existing objects, if push dates are unique, prep to pass url to retrieve latest language byte data
+// Check to see if push dates differ; if the dates do not differ, 1) store objects with matching dates to existingObjsToKeep AND 2) Call the function getURLsForUpdtdRepos and pass the array, 'matchedObjs'
 function findUpdatedRepos (newArray, existingArray) {
   let matchedObjs = []
   existingArray.forEach(function (existObj) {
@@ -79,6 +79,7 @@ function findUpdatedRepos (newArray, existingArray) {
   getURLsForUpdtdRepos(matchedObjs)
 }
 
+// To enrich for objects from updated repos, keep objects from the existing array that do NOT exist in the array passed to the function, the matchedObjs array
 function getURLsForUpdtdRepos (arr) {
   let updatedObjsToFetch = []
   existingArray.forEach(function (existObj) {
@@ -142,7 +143,7 @@ function getLanguageBytes (url) {
 // combinedArr is the array with all URLs to fetch. Once the array to hold new repo language data is the same size as 'combinedArr', then the next function can be called
 function evalLangBytArrStatus () {
   if (langBytesAryofObjs.length === combinedArr.length) {
-    buildComprehensiveObj(arrayOfLangObjs, langBytesAryofObjs)
+    buildComprehensiveObj(arOfRepoObjs, langBytesAryofObjs)
   }
 }
 
@@ -216,6 +217,8 @@ function makeBytesFirst (myData) {
       newDataObjsArr.push(newDataObj)
     }
   })
+  // console.log(newDataObjsArr)
+  // console.log(`newDataObjsArr length: ${newDataObjsArr.length}`)
   combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeep)
 }
 
