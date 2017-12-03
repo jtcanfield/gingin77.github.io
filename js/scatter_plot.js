@@ -11,13 +11,11 @@ d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     return console.warn(error)
   }
   existingArray = data
-  console.log(existingArray)
   evalIfArrysNotNull(arrayOfLangObjs, existingArray)
 })
 
 // Request data from single endpoint in GitHub API, arrange data into object and compare new data objects with existing data objects
 d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', function (error, dataObj) {
-  console.log(dataObj)
   if (error) {
     return console.warn(error)
   }
@@ -106,7 +104,6 @@ function elimateDuplicates (arr) {
 function compileURLsToFetch (newRepoUrlsToFetch, updatedRepoUrlsToFetch) {
   if (findNewReposComplete === true && getURLsForUpdtdReposComplete === true) {
     combinedArr = newRepoUrlsToFetch.concat(updatedRepoUrlsToFetch)
-    console.log(combinedArr.length)
     splitArryToURLs(combinedArr)
   }
 }
@@ -115,7 +112,6 @@ function compileURLsToFetch (newRepoUrlsToFetch, updatedRepoUrlsToFetch) {
 function splitArryToURLs (array) {
    for (let i = 0; i < array.length; i++) {
      let url = array[i]
-     console.log(url)
      getLanguageBytes(url)
    }
  }
@@ -145,7 +141,6 @@ function getLanguageBytes (url) {
 
 // combinedArr is the array with all URLs to fetch. Once the array to hold new repo language data is the same size as 'combinedArr', then the next function can be called
 function evalLangBytArrStatus () {
-  console.log(langBytesAryofObjs.length)
   if (langBytesAryofObjs.length === combinedArr.length) {
     buildComprehensiveObj(arrayOfLangObjs, langBytesAryofObjs)
   }
@@ -230,7 +225,6 @@ let combineNewWithExistComplete = false
 
 function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeep) {
   updatedCompObj = existingObjsToKeep.concat(newDataObjsArr)
-  console.log(updatedCompObj)
   combineNewWithExistComplete = true
   drawScatterPlot()
 }
@@ -396,23 +390,5 @@ function drawScatterPlot () {
       .attr('dy', '.35em')
       .style('text-anchor', 'start')
       .text(function (d) { return d })
-
-    // // Set up variables to define outline properties
-    // let maxCount = d3.max(myData, function (d) { return d.count }),
-    //   otLrName = myData.filter(obj => obj.count === maxCount)[0].repo_name,
-    //   otLrLang = myData.filter(obj => obj.count === maxCount)[0].language,
-    //   otLrDate = new Date (myData.filter(obj => obj.count === maxCount)[0].pushed_at),
-    //   dateFormatter = d3.timeFormat('%B %e')
-    //   countFormatter = d3.format(',.3r')
-    //
-    // let captionTarget = document.getElementById('for_svg')
-    // let svgOutlierNote = document.createElement('div')
-    // svgOutlierNote.classList.add('div_svg_caption')
-    // svgOutlierNote.innerHTML = `
-    //   <p class="c_above caption">There is a single outlier datapoint not shown in the scatter plot above. The ${otLrLang} byte count for ${otLrName} (the code for this webpage) is around ${countFormatter(maxCount)} bytes. To see language data points for this project, look for data points associated with ${dateFormatter(otLrDate)}.<br />
-    //   <br />
-    //   <span class="bold_header"><span>
-    //   </p>`
-    // captionTarget.appendChild(svgOutlierNote)
   })
 }
