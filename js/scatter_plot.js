@@ -6,7 +6,7 @@ let existingArray = []
 drawScatterPlot()
 
 // Retrieve data and initiate comparison with data requested from external API
-d3.json('static_data/langBytesFirst_12_1.json', function (error, data) {
+d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
   if (error) {
     return console.warn(error)
   }
@@ -72,7 +72,7 @@ function findUpdatedRepos (newArray, existingArray) {
   let matchedObjs = []
   existingArray.forEach(function (existObj) {
     newArray.filter(function (newArObj) {
-      if ((new Date(existObj.pushed_at).toString()) === (new Date(newArObj.pushed_at).toString())) {
+      if (new Date(existObj.pushed_at).toString() === new Date(newArObj.pushed_at).toString()) {
         matchedObjs.push(existObj)
       }
     })
@@ -247,7 +247,7 @@ function drawScatterPlot () {
     }
   }
 
-  d3.json('static_data/langBytesFirst_12_1.json', function (error, data) {
+  d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     if (error) {
       return console.warn(error)
     }
