@@ -38,7 +38,7 @@ d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', funct
 function evalIfArrysNotNull () {
   if (arOfRepoObjs.length !== 0 && existingArray.length !== 0) {
     findNewRepos(arOfRepoObjs, existingArray)
-    findUpdatedRepos(arOfRepoObjs, existingArray)
+    findDateMatchedRepos(arOfRepoObjs, existingArray)
   }
 }
 
@@ -66,7 +66,7 @@ function findNewRepos (newArray, existingArray) {
 }
 
 // Check to see if push dates differ; if the dates do not differ, 1) store objects with matching dates to existingObjsToKeep AND 2) Call the function getURLsForUpdtdRepos and pass the array, 'matchedObjs'
-function findUpdatedRepos (newArray, existingArray) {
+function findDateMatchedRepos (newArray, existingArray) {
   let matchedObjs = []
   existingArray.forEach(function (existObj) {
     newArray.filter(function (newArObj) {
@@ -80,10 +80,10 @@ function findUpdatedRepos (newArray, existingArray) {
 }
 
 // To enrich for objects from updated repos, keep objects from the existing array that do NOT exist in the array passed to the function, the matchedObjs array
-function getURLsForUpdtdRepos (arr) {
+function getURLsForUpdtdRepos (matchedObjs) {
   let updatedObjsToFetch = []
   existingArray.forEach(function (existObj) {
-    if (arr.indexOf(existObj) === -1) {
+    if (matchedObjs.indexOf(existObj) === -1) {
       updatedObjsToFetch.push(existObj)
     }
   })
@@ -111,10 +111,10 @@ function compileURLsToFetch (newRepoUrlsToFetch, updatedRepoUrlsToFetch) {
 
 // Pass urls from array to next fetch function one at a time
 function splitArryToURLs (array) {
-   for (let i = 0; i < array.length; i++) {
-     let url = array[i]
+   array.forEach(function (item) {
+     let url = item
      getLanguageBytes(url)
-   }
+   })
  }
 
 // As the language byte data for each repo is retreived, it all goes into the array, langBytesAryofObjs
@@ -217,8 +217,6 @@ function makeBytesFirst (myData) {
       newDataObjsArr.push(newDataObj)
     }
   })
-  // console.log(newDataObjsArr)
-  // console.log(`newDataObjsArr length: ${newDataObjsArr.length}`)
   combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeep)
 }
 
@@ -252,17 +250,13 @@ function drawScatterPlot () {
     let myData = []
     evalDataSetForD3(data, combineNewWithExistComplete)
 
-    // if new data is available (in the variable 'updatedCompObj'), it will be used in place of the existing data stored as 'data' and coming from the static_data/updatedCompObj_12_2.json
+    // if new data is available in the variable 'updatedCompObj', it will be used in place of the existing data stored as 'data' and coming from the static_data/updatedCompObj_12_2.json
     function evalDataSetForD3 (data, combineNewWithExistComplete) {
       if (combineNewWithExistComplete) {
         myData = updatedCompObj
       } else {
         myData = data
       }
-    }
-
-    function strToDtSingle (d) {
-      return new Date(d)
     }
 
     let sortbyDate = d3.nest()
@@ -274,8 +268,12 @@ function drawScatterPlot () {
 
     let minDate = new Date(sortbyDate[0].key),
       maxDate = new Date(sortbyDate[sortbyDate.length - 1].key),
-      xMax = new Date(maxDate).addWeeks(1),
-      xMin = new Date(minDate).addWeeks(-1)
+      xMin = new Date(minDate).addWeeks(-1),
+      xMax = new Date(maxDate).addWeeks(1)
+
+    function stringToDate (d) {
+      return new Date(d)
+    }
 
     let margin = {
         top: 10,
@@ -288,7 +286,7 @@ function drawScatterPlot () {
 
     // setup x
     let xScale = d3.scaleTime().domain([xMin, xMax]).range([margin.right, width - margin.left]),
-      xValue = function (d) { return xScale(strToDtSingle(d.pushed_at)) },
+      xValue = function (d) { return xScale(stringToDate(d.pushed_at)) },
       xAxis = d3.axisBottom(xScale).ticks(d3.timeWeek.every(2)).tickFormat(d3.timeFormat('%b %e'))
 
     // setup y
@@ -333,8 +331,8 @@ function drawScatterPlot () {
         purple = '#A99CCD',
         peach = '#E6AC93',
         grey = '#8F8F90',
-        cValue = function (d) { return d.language },
-        color = d3.scaleOrdinal()
+        colorValue = function (d) { return d.language },
+        colorScale = d3.scaleOrdinal()
           .domain(['JavaScript', 'Ruby', 'CSS', 'HTML', 'CoffeeScript', 'Shell', 'Null'])
           .range([blue, rubyred, purple, peach, grey, grey, grey])
 
@@ -352,7 +350,7 @@ function drawScatterPlot () {
       .attr('r', 4.5)
       .attr('cx', xValue)
       .attr('cy', yValue)
-      .style('fill', function (d) { return color(cValue(d)) })
+      .style('fill', function (d) { return colorScale(colorValue(d)) })
       .on('mouseover', function (d) {
         tooltip.transition()
           .duration(200)
@@ -367,6 +365,7 @@ function drawScatterPlot () {
           .style('opacity', 0)
       })
 
+    // Use lcolor as the color and text for the figure legend because Misc will be used instead of naming each language associated with grey
     let lcolor = d3.scaleOrdinal()
       .domain(['JS', 'Ruby', 'CSS', 'HTML', 'Misc'])
       .range([blue, rubyred, purple, peach, grey])
