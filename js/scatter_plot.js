@@ -9,7 +9,7 @@ d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     return console.warn(error)
   }
   existingArray = data
-  sortOrgBasedRepos(existingArray)
+  keepOrgRepoObjs(existingArray)
   evalIfArrysNotNull(arOfRepoObjs, existingArray)
 })
 
@@ -42,8 +42,10 @@ function evalIfArrysNotNull () {
 let newRepoUrlsToFetch = []
 let existingObjsToKeep = []
 let orgObjs = []
+let existingObjsToKeepWiOrgObjs = []
 let updatedRepoUrlsToFetch = []
 
+let keptOrgObjsComplete = false
 let findNewReposComplete = false
 let getURLsForUpdtdReposComplete = false
 
@@ -76,14 +78,19 @@ function findDateMatchedRepos (newArray, existingArray) {
   getURLsForUpdtdRepos(matchedObjs)
 }
 
-function sortOrgBasedRepos (existingArray) {
+function keepOrgRepoObjs (existingArray) {
   orgObjs = existingArray.filter(obj => obj.url_for_all_repo_langs === 'https://api.github.com/repos/Tourify/tourify_rr/languages')
+  console.log(orgObjs)
   combineOrgAndExisToKeep(orgObjs, existingObjsToKeep)
 }
 
 function combineOrgAndExisToKeep (orgObjs, existingObjsToKeep) {
+  console.log('combineOrgAndExisToKeep was called')
+  console.log(existingObjsToKeep.length)
   if (orgObjs.length !== 0 && existingObjsToKeep.length !== 0) {
-    existingObjsToKeep = existingObjsToKeep.concat(orgObjs)
+    existingObjsToKeepWiOrgObjs = existingObjsToKeep.concat(orgObjs)
+    console.log(existingObjsToKeepWiOrgObjs.length)
+    keptOrgObjsComplete = true
   }
 }
 
@@ -123,11 +130,11 @@ function compileURLsToFetch (newRepoUrlsToFetch, updatedRepoUrlsToFetch) {
 }
 
 function splitArryToURLs (array) {
-   array.forEach(function (item) {
-     let url = item
-     getLanguageBytes(url)
-   })
- }
+  array.forEach(function (item) {
+    let url = item
+    getLanguageBytes(url)
+  })
+}
 
 let langBytesAryofObjs = []
 function getLanguageBytes (url) {
@@ -224,16 +231,24 @@ function makeBytesFirst (myData) {
       newDataObjsArr.push(newDataObj)
     }
   })
-  combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeep)
+  console.log(existingObjsToKeepWiOrgObjs.length)
+  combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeepWiOrgObjs)
 }
 
 let updatedCompObj = []
 let combineNewWithExistComplete = false
 
-function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeep) {
-  updatedCompObj = existingObjsToKeep.concat(newDataObjsArr)
-  combineNewWithExistComplete = true
-  drawScatterPlot()
+function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeepWiOrgObjs) {
+  console.log('combineNewWithExistingObjs')
+  console.log(existingObjsToKeepWiOrgObjs.length)
+  if (keptOrgObjsComplete === true) {
+    console.log('combineNewWithExistingObjs condition was met')
+    updatedCompObj = existingObjsToKeepWiOrgObjs.concat(newDataObjsArr)
+    combineNewWithExistComplete = true
+    drawScatterPlot()
+  } else {
+    console.log('combineNewWithExistingObjs condition was NOT met')
+  }
 }
 
 function drawScatterPlot () {
@@ -250,7 +265,6 @@ function drawScatterPlot () {
     if (error) {
       return console.warn(error)
     }
-    console.log('internal data was pulled in drawScatterPlot')
 
     let myData = []
     evalDataSetForD3(data, combineNewWithExistComplete)
@@ -258,8 +272,10 @@ function drawScatterPlot () {
     function evalDataSetForD3 (data, combineNewWithExistComplete) {
       if (combineNewWithExistComplete) {
         myData = updatedCompObj
+        console.log('myData = updatedCompObj')
       } else {
         myData = data
+        console.log('myData = data')
       }
     }
 
