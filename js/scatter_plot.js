@@ -46,9 +46,10 @@ function evalIfArrysNotNull () {
 let newRepoUrlsToFetch = []
 let existingObjsToKeep = []
 let orgObjs = []
+let existingObjsToKeepWiOrgObjs = []
 let updatedRepoUrlsToFetch = []
 
-let keepOrgObjs = false
+let keptOrgObjsComplete = false
 let findNewReposComplete = false
 let getURLsForUpdtdReposComplete = false
 
@@ -91,11 +92,12 @@ function keepOrgRepoObjs (existingArray) {
 
 function combineOrgAndExisToKeep (orgObjs, existingObjsToKeep) {
   console.log('combineOrgAndExisToKeep was called')
-  if (orgObjs.length !== 0 && existingObjsToKeep.length !== 0) {
-    existingObjsToKeep = existingObjsToKeep.concat(orgObjs)
-    keepOrgObjs = true
-  }
   console.log(existingObjsToKeep.length)
+  if (orgObjs.length !== 0 && existingObjsToKeep.length !== 0) {
+    existingObjsToKeepWiOrgObjs = existingObjsToKeep.concat(orgObjs)
+    console.log(existingObjsToKeepWiOrgObjs.length)
+    keptOrgObjsComplete = true
+  }
 }
 
 // To enrich for objects from updated repos, keep objects from the existing array that do NOT exist in the array passed to the function, the matchedObjs array
@@ -242,19 +244,25 @@ function makeBytesFirst (myData) {
       newDataObjsArr.push(newDataObj)
     }
   })
-  // console.log(newDataObjsArr)
-  // console.log(`newDataObjsArr length: ${newDataObjsArr.length}`)
-  combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeep)
+  console.log(existingObjsToKeepWiOrgObjs.length)
+  combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeepWiOrgObjs)
 }
 
 // Once the newly requested data has been processed using the functions above, these new objects need to be combined with the existing data objects (upadated repos were already removed earlier on)
 let updatedCompObj = []
 let combineNewWithExistComplete = false
 
-function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeep) {
-  updatedCompObj = existingObjsToKeep.concat(newDataObjsArr)
-  combineNewWithExistComplete = true
-  drawScatterPlot()
+function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeepWiOrgObjs) {
+  console.log('combineNewWithExistingObjs')
+  console.log(existingObjsToKeepWiOrgObjs.length)
+  if (keptOrgObjsComplete === true) {
+    console.log('combineNewWithExistingObjs condition was met')
+    updatedCompObj = existingObjsToKeepWiOrgObjs.concat(newDataObjsArr)
+    combineNewWithExistComplete = true
+    drawScatterPlot()
+  } else {
+    console.log('combineNewWithExistingObjs condition was NOT met')
+  }
 }
 
 // Finally, after the new data has been processed and then added into an array with the existing data objects, a single array of objects can be passed to d3 so that the scatter plot can be rendered
@@ -273,7 +281,6 @@ function drawScatterPlot () {
     if (error) {
       return console.warn(error)
     }
-    console.log('internal data was pulled in drawScatterPlot')
 
     let myData = []
     evalDataSetForD3(data, combineNewWithExistComplete)
@@ -282,8 +289,10 @@ function drawScatterPlot () {
     function evalDataSetForD3 (data, combineNewWithExistComplete) {
       if (combineNewWithExistComplete) {
         myData = updatedCompObj
+        console.log('myData = updatedCompObj')
       } else {
         myData = data
+        console.log('myData = data')
       }
     }
 
