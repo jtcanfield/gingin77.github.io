@@ -299,7 +299,7 @@ function drawScatterPlot () {
       xValue = function (d) { return xScale(stringToDate(d.pushed_at)) },
       xAxis = d3.axisBottom(xScale).ticks(d3.timeWeek.every(2)).tickFormat(d3.timeFormat('%b %e'))
 
-    let yScale = d3.scaleLinear().domain([0, 72000]).range([height - 2, 0]),
+    let yScale = d3.scaleLinear().domain([0, 76000]).range([height - 2, 0]),
       yValue = function (d) { return yScale(d.count) },
       yAxis = d3.axisLeft(yScale).tickFormat(d3.format('0.2s'))
 
