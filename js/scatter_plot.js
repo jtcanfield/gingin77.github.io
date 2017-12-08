@@ -80,21 +80,16 @@ function findDateMatchedRepos (newArray, existingArray) {
 
 function keepOrgRepoObjs (existingArray) {
   orgObjs = existingArray.filter(obj => obj.url_for_all_repo_langs === 'https://api.github.com/repos/Tourify/tourify_rr/languages')
-  console.log(orgObjs)
   combineOrgAndExisToKeep(orgObjs, existingObjsToKeep)
 }
 
 function combineOrgAndExisToKeep (orgObjs, existingObjsToKeep) {
-  console.log('combineOrgAndExisToKeep was called')
-  console.log(existingObjsToKeep.length)
   if (orgObjs.length !== 0 && existingObjsToKeep.length !== 0) {
     existingObjsToKeepWiOrgObjs = existingObjsToKeep.concat(orgObjs)
-    console.log(existingObjsToKeepWiOrgObjs.length)
     keptOrgObjsComplete = true
   }
 }
 
-// To enrich for objects from updated repos, keep objects from the existing array that do NOT exist in the array passed to the function, the matchedObjs array
 function getURLsForUpdtdRepos (matchedObjs) {
   let updatedObjsToFetch = []
   existingArray.forEach(function (existObj) {
@@ -231,7 +226,6 @@ function makeBytesFirst (myData) {
       newDataObjsArr.push(newDataObj)
     }
   })
-  console.log(existingObjsToKeepWiOrgObjs.length)
   combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeepWiOrgObjs)
 }
 
@@ -239,10 +233,7 @@ let updatedCompObj = []
 let combineNewWithExistComplete = false
 
 function combineNewWithExistingObjs (newDataObjsArr, existingObjsToKeepWiOrgObjs) {
-  console.log('combineNewWithExistingObjs')
-  console.log(existingObjsToKeepWiOrgObjs.length)
   if (keptOrgObjsComplete === true) {
-    console.log('combineNewWithExistingObjs condition was met')
     updatedCompObj = existingObjsToKeepWiOrgObjs.concat(newDataObjsArr)
     combineNewWithExistComplete = true
     drawScatterPlot()
