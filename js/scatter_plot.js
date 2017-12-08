@@ -11,7 +11,7 @@ d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     return console.warn(error)
   }
   existingArray = data
-  sortOrgBasedRepos(existingArray)
+  keepOrgRepoObjs(existingArray)
   evalIfArrysNotNull(arOfRepoObjs, existingArray)
 })
 
@@ -48,6 +48,7 @@ let existingObjsToKeep = []
 let orgObjs = []
 let updatedRepoUrlsToFetch = []
 
+let keepOrgObjs = false
 let findNewReposComplete = false
 let getURLsForUpdtdReposComplete = false
 
@@ -82,15 +83,19 @@ function findUpdatedRepos (newArray, existingArray) {
   getURLsForUpdtdRepos(matchedObjs)
 }
 
-function sortOrgBasedRepos (existingArray) {
+function keepOrgRepoObjs (existingArray) {
   orgObjs = existingArray.filter(obj => obj.url_for_all_repo_langs === 'https://api.github.com/repos/Tourify/tourify_rr/languages')
+  console.log(orgObjs)
   combineOrgAndExisToKeep(orgObjs, existingObjsToKeep)
 }
 
 function combineOrgAndExisToKeep (orgObjs, existingObjsToKeep) {
+  console.log('combineOrgAndExisToKeep was called')
   if (orgObjs.length !== 0 && existingObjsToKeep.length !== 0) {
     existingObjsToKeep = existingObjsToKeep.concat(orgObjs)
+    keepOrgObjs = true
   }
+  console.log(existingObjsToKeep.length)
 }
 
 // To enrich for objects from updated repos, keep objects from the existing array that do NOT exist in the array passed to the function, the matchedObjs array
