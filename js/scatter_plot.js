@@ -9,6 +9,7 @@ d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
     return console.warn(error)
   }
   existingArray = data
+  sortOrgBasedRepos(existingArray)
   evalIfArrysNotNull(arOfRepoObjs, existingArray)
 })
 
@@ -40,6 +41,7 @@ function evalIfArrysNotNull () {
 
 let newRepoUrlsToFetch = []
 let existingObjsToKeep = []
+let orgObjs = []
 let updatedRepoUrlsToFetch = []
 
 let findNewReposComplete = false
@@ -70,9 +72,22 @@ function findDateMatchedRepos (newArray, existingArray) {
     })
   })
   existingObjsToKeep = matchedObjs
+  combineOrgAndExisToKeep(orgObjs, existingObjsToKeep)
   getURLsForUpdtdRepos(matchedObjs)
 }
 
+function sortOrgBasedRepos (existingArray) {
+  orgObjs = existingArray.filter(obj => obj.url_for_all_repo_langs === 'https://api.github.com/repos/Tourify/tourify_rr/languages')
+  combineOrgAndExisToKeep(orgObjs, existingObjsToKeep)
+}
+
+function combineOrgAndExisToKeep (orgObjs, existingObjsToKeep) {
+  if (orgObjs.length !== 0 && existingObjsToKeep.length !== 0) {
+    existingObjsToKeep = existingObjsToKeep.concat(orgObjs)
+  }
+}
+
+// To enrich for objects from updated repos, keep objects from the existing array that do NOT exist in the array passed to the function, the matchedObjs array
 function getURLsForUpdtdRepos (matchedObjs) {
   let updatedObjsToFetch = []
   existingArray.forEach(function (existObj) {
@@ -80,10 +95,16 @@ function getURLsForUpdtdRepos (matchedObjs) {
       updatedObjsToFetch.push(existObj)
     }
   })
-  let UpdtdUrls = updatedObjsToFetch.map((obj) => obj.url_for_all_repo_langs)
-  updatedRepoUrlsToFetch = elimateDuplicates(UpdtdUrls)
+  let upDtdUrls = updatedObjsToFetch.map((obj) => obj.url_for_all_repo_langs)
+  let upDtdUrlsMinusOrgs = removeOrgUrl(upDtdUrls)
+  updatedRepoUrlsToFetch = elimateDuplicates(upDtdUrlsMinusOrgs)
   getURLsForUpdtdReposComplete = true
   compileURLsToFetch(newRepoUrlsToFetch, updatedRepoUrlsToFetch)
+}
+
+function removeOrgUrl (upDtdUrls) {
+  upDtdUrls = upDtdUrls.filter(obj => obj !== 'https://api.github.com/repos/Tourify/tourify_rr/languages')
+  return upDtdUrls
 }
 
 function elimateDuplicates (arr) {
@@ -229,6 +250,7 @@ function drawScatterPlot () {
     if (error) {
       return console.warn(error)
     }
+    console.log('internal data was pulled in drawScatterPlot')
 
     let myData = []
     evalDataSetForD3(data, combineNewWithExistComplete)
