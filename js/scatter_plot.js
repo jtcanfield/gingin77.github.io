@@ -329,14 +329,14 @@ function drawScatterPlot () {
 
     // setup dot colors
     let blue = '#457DB7',
-        rubyred = '#991B67',
-        purple = '#A99CCD',
-        peach = '#E6AC93',
-        grey = '#8F8F90',
-        cValue = function (d) { return d.language },
-        color = d3.scaleOrdinal()
-          .domain(['JavaScript', 'Ruby', 'CSS', 'HTML', 'CoffeeScript', 'Shell', 'Null'])
-          .range([blue, rubyred, purple, peach, grey, grey, grey])
+      rubyred = '#991B67',
+      purple = '#A99CCD',
+      peach = '#E6AC93',
+      grey = '#8F8F90',
+      cValue = function (d) { return d.language },
+      color = d3.scaleOrdinal()
+        .domain(['JavaScript', 'Ruby', 'CSS', 'HTML', 'CoffeeScript', 'Shell', 'Null'])
+        .range([blue, rubyred, purple, peach, grey, grey, grey])
 
     // assign tooltip
     let tooltip = d3.select('body')
