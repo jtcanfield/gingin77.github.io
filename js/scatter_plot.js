@@ -131,12 +131,11 @@ function compileURLsToFetch (newRepoUrlsToFetch, updatedRepoUrlsToFetch) {
 
 // Pass urls from array to next fetch function one at a time
 function splitArryToURLs (array) {
-   for (let i = 0; i < array.length; i++) {
-     let url = array[i]
-     console.log(url)
-     // getLanguageBytes(url)
-   }
- }
+  array.forEach(function (item) {
+    let url = item
+    getLanguageBytes(url)
+  })
+}
 
 // As the language byte data for each repo is retreived, it all goes into the array, langBytesAryofObjs
 let langBytesAryofObjs = []
