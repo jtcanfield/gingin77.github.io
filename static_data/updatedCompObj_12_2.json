@@ -1,5 +1,45 @@
 [
   {
+    "language": "Ruby",
+    "count": 65014,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 28688,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 14994,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 8121,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 1477,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
     "language": "JavaScript",
     "count": 6886,
     "repo_name": "Authentication_proj",
