@@ -325,25 +325,14 @@ function drawScatterPlot () {
       .text('Number of Bytes Stored')
 
     let blue = '#457DB7',
-<<<<<<< HEAD
       rubyred = '#991B67',
       purple = '#A99CCD',
       peach = '#E6AC93',
       grey = '#8F8F90',
-      cValue = function (d) { return d.language },
-      color = d3.scaleOrdinal()
+      colorValue = function (d) { return d.language },
+      colorScale = d3.scaleOrdinal()
         .domain(['JavaScript', 'Ruby', 'CSS', 'HTML', 'CoffeeScript', 'Shell', 'Null'])
         .range([blue, rubyred, purple, peach, grey, grey, grey])
-=======
-        rubyred = '#991B67',
-        purple = '#A99CCD',
-        peach = '#E6AC93',
-        grey = '#8F8F90',
-        colorValue = function (d) { return d.language },
-        colorScale = d3.scaleOrdinal()
-          .domain(['JavaScript', 'Ruby', 'CSS', 'HTML', 'CoffeeScript', 'Shell', 'Null'])
-          .range([blue, rubyred, purple, peach, grey, grey, grey])
->>>>>>> 6bc1bb008a9887b2dfc055c0be62571a8eb77156
 
     let tooltip = d3.select('body')
       .append('div')
