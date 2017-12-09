@@ -240,6 +240,10 @@ section {
   transition-delay: margin-left 100ms
 }
 
+.italic{
+  font-style: italic;
+}
+
 .height_filler{
   height: 150px;
 }
@@ -275,6 +279,14 @@ section {
   font-weight: 400;
   text-align: center;
   font-size: 1.5em;
+}
+
+.portfolio{
+  text-align: left;
+}
+
+.no_top_margin{
+  margin-top: 0;
 }
 
 .portfolio_list_item{
@@ -350,7 +362,7 @@ section {
   margin-top: 40px;
 }
 
-#skills_img{
+.skills_img{
   width: 100%;
   height: auto;
   max-width: 600px;
