@@ -132,6 +132,9 @@
         <div id="for_svg"></div>
         <p class="caption c_above">The scatter plot above uses data pulled from GitHub's REST API and was constructed using the D3.js library (D3 = Data-Driven Documents).<a href="https://github.com/gingin77/gh_rest_api_fetch"> The code is available on GitHub. <i class="fa fa-github" aria-hidden="true"></i></a>
         </p>
+        <p>
+          I've written a blog post series discussing how I went about designing and building the scatter plot above. The series starts off with the following intro post: <a href="https://ginnielearnstocode.wordpress.com/2017/12/03/building-a-scatter-plot-with-d3-js-using-programming-language-data-from-githubs-rest-api/">Building a scatter plot with d3.js using data from GitHub’s REST API</a>
+        </p>
       </div>
       <div class="topic p_600_max">
         <p class="skills_graph_title">Programming Languages for GitHub Repos: Bar Graph and TreeMap</p>
@@ -147,84 +150,81 @@
         <p>
           Some of the information here is also included in my resume, which is available to <a href='resume.html'>view </a> and <a href="public/G.Hench_Resume.pdf" download="true">download</a>.
         </p>
-        <p>
-          <br />
-          <span class="bold_header">Featured Projects:</span>
-          <ul class="no_top_margin">
-            <li class="portfolio_list_item">
-              <a href="#tourify">Tourify:</a> a Ruby on Rails app that supports a mobile-responsive guided tour of downtown Durham
-            </li>
-            <li class="portfolio_list_item italic">Scatter Plot Using Data from GitHub REST API: more details coming soon
-            </li>
-            <li class="portfolio_list_item italic">
-              Song Playlist Using Data from the iTunes API: more details coming soon
-            </li>
-          </ul>
-        </p>
-        <div class="project_wrapper">
-          <span class="anchor" id="tourify"></span>
-          <p class="project_title">Tourify</p>
-          <p>
-            Tourify is a collaboratively built web app that serves two main user types:
-            <ul>
-              <li class="portfolio_list_item">
-                Tourist users get a mobile-responsive walking tour of downtown Durham
-              </li>
-              <li class="portfolio_list_item">
-                Tour content creators can register to use a dashboard that makes it easy to create, upload, and edit new tours with stops
-              </li>
-            </ul>
-          </p>
-          <img class="skills_img" src="images/tour_and_creator_views2.png"/>
-          <br />
-          <p class="caption c_above">The image above shows Tourify's home page for the tourist's view (left) and a view from Tourify's Content Creator's Dashboad (right). Tourify’s tourist’s view is available at: <a href="http://tourify.city/">tourify.city</a>
-          </p>
-          <p>
-            As a <span class="bold_header">backend developer</span> on the project, I was involved in building this Ruby on Rails web app that serves an API with tour and stop information to the frontend and supports a Content Creator’s Dashboard, which provides an interface to make changes to the content in the API.
-            <ol>
-              <li class="portfolio_list_item">
-                A user must register and be logged in to access Tourify's Content Creator’s Dashboard
-              </li>
-              <li class="portfolio_list_item">
-                A user can only view and make edits to tours associated with the same organization to which that user is a member
-              </li>
-              <li class="portfolio_list_item">
-                Content Creators can add multiple stops to a tour at once by uploading a .csv file. It is also possible to export multiple stops at once to either a .csv or .excel file.
-              </li>
-            </ol>
-          </p>
-          <p class="caption c_above">The image below shows the options available on the Stops Main Page within Tourify's Content Creator's Dashboard.
-          </p>
-          <img class="skills_img" src="images/Stops_main_page.png"/>
-          <br />
-          <br />
-          <p>
-            <span class="bold_header">Tourify’s Content Creator Dashboard</span> is available in a beta-tester's version at:<a href="https://agile-mesa-66753.herokuapp.com/"> agile-mesa-66753.herokuapp.com</a>
-            <ol>
-              <li class="portfolio_list_item">
-                You can create a username and password on the Registration page and then you'll then be routed to the Login page.
-              </li>
-              <li class="portfolio_list_item">
-                After you login, you'll see the Organization home page, which lists all tours associated with the given organization (the view shown above).
-              </li>
-              <li class="portfolio_list_item">
-                Feel free to test out the options available - view the individual stops or the tours overview page.
-              </li>
-              <li class="portfolio_list_item">
-                Bulk-upload and download options are available for handling multiple stops associated with a given tour. To view these options, select "See tour overview" on the Organization home page and then select the organge button that says "Stops Main Page". Alternatively, if you have logged in, you should be able to access the Stops Main Page by opening the following URL: <a href="https://agile-mesa-66753.herokuapp.com/organizations/3/tours/4/stops">agile-mesa-66753.herokuapp.com/organizations/3/tours/4/stops</a>
-              </li>
-            </ol>
-          </p>
-          <p>
-            <span class="bold_header">Tourify’s Backend Code Repository: </span><a href="https://github.com/Tourify/tourify_rr">https://github.com/Tourify/tourify_rr</a>
-          </p>
-        </div>
+        <br />
+        <span class="bold_header">Featured Projects:</span>
+        <ul class="no_top_margin">
+          <li class="portfolio_list_item">
+            <a href="#tourify">Tourify:</a> a Ruby on Rails app that supports a mobile-responsive guided tour of downtown Durham
+          </li>
+          <li class="portfolio_list_item italic">Scatter Plot Using Data from GitHub REST API: more details coming soon
+          </li>
+          <li class="portfolio_list_item italic">
+            Song Playlist Using Data from the iTunes API: more details coming soon
+          </li>
+        </ul>
         <!-- <div>
           <p class="project_title">Scatter Plot Using Data from GitHub REST API</p>
         </div>
         <div>
           <p class="project_title">Song Playlist Using Data from the iTunes API</p>
         </div> -->
+      </div>
+      <div class="topic p_600_max portfolio">
+        <span class="anchor" id="tourify"></span>
+        <p class="project_title">Tourify</p>
+        <p>
+          Tourify is a collaboratively built web app that serves two main user types:
+          <ul class="no_top_margin">
+            <li class="portfolio_list_item">
+              Tourist users get a mobile-responsive walking tour of downtown Durham
+            </li>
+            <li class="portfolio_list_item">
+              Tour content creators can register to use a dashboard that makes it easy to create, upload, and edit new tours with stops
+            </li>
+          </ul>
+        </p>
+        <img class="skills_img" src="images/tour_and_creator_views2.png"/>
+        <br />
+        <p class="caption c_above">The image above shows Tourify's home page for the tourist's view (left) and a view from Tourify's Content Creator's Dashboad (right). Tourify’s tourist’s view is available at: <a href="http://tourify.city/">tourify.city</a>
+        </p>
+        <p>
+          As a <span class="bold_header">backend developer</span> on the project, I was involved in building this Ruby on Rails web app that serves an API with tour and stop information to the frontend and supports a Content Creator’s Dashboard, which provides an interface to make changes to the content in the API.
+          <ul class="no_top_margin">
+            <li class="portfolio_list_item">
+              A user must register and be logged in to access Tourify's Content Creator’s Dashboard
+            </li>
+            <li class="portfolio_list_item">
+              A user can only view and make edits to tours associated with the same organization to which that user is a member
+            </li>
+            <li class="portfolio_list_item">
+              Content Creators can add multiple stops to a tour at once by uploading a .csv file. It is also possible to export multiple stops at once to either a .csv or .excel file.
+            </li>
+          </ul>
+        </p>
+        <p class="caption c_above">The image below shows the options available on the Stops Main Page within Tourify's Content Creator's Dashboard.
+        </p>
+        <img class="skills_img" src="images/Stops_main_page.png"/>
+        <br />
+        <br />
+        <p class="margin-top"><span class="bold_header">Tourify’s Content Creator Dashboard</span> is available in a beta-tester's version at:<a href="https://agile-mesa-66753.herokuapp.com/"> agile-mesa-66753.herokuapp.com</a>
+        </p>
+          <ul class="no_top_margin">
+            <li class="portfolio_list_item">
+              You can create a username and password on the Registration page and then you'll then be routed to the Login page.
+            </li>
+            <li class="portfolio_list_item">
+              After you login, you'll see the Organization home page, which lists all tours associated with the given organization (the view shown above).
+            </li>
+            <li class="portfolio_list_item">
+              Feel free to test out the options available - view the individual stops or the tours overview page.
+            </li>
+            <li class="portfolio_list_item">
+              Bulk-upload and download options are available for handling multiple stops associated with a given tour. To view these options, select "See tour overview" on the Organization home page and then select the organge button that says "Stops Main Page". Alternatively, if you have logged in, you should be able to access the Stops Main Page by opening the following URL: <a href="https://agile-mesa-66753.herokuapp.com/organizations/3/tours/4/stops">agile-mesa-66753.herokuapp.com/organizations/3/tours/4/stops</a>
+            </li>
+          </ul>
+        <p>
+          <span class="bold_header">Tourify’s Backend Code Repository: </span><a href="https://github.com/Tourify/tourify_rr">https://github.com/Tourify/tourify_rr</a>
+        </p>
       </div>
       <span class="anchor" id="connect"></span>
       <div class="topic show_icons_below_last">
