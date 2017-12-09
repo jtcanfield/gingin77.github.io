@@ -71,6 +71,7 @@ body{
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   background-color: #F6F5F6;
+  color: #060026;
 }
 
 li {
@@ -265,6 +266,24 @@ section {
   font-weight: 400;
   text-align: center;
   font-size: 2em;
+}
+
+.project_wrapper{
+  max-width: 600px;
+}
+.project_title{
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.portfolio_list_item{
+  color:inherit;
+  font-size: 1.2em;
+  color: #060026;
+  padding: 4px 0;
+  list-style-type: disc;
+  max-width: 600px;
 }
 
 .image_holder{
@@ -542,6 +561,17 @@ footer{
   .centered_p{
     font-size: 2em;
     margin-top: 1em;
+  }
+
+  .project_title{
+    font-size: 1.5em;
+    margin-top: 1em;
+  }
+
+  .portfolio_list_item{
+    color:inherit;
+    font-size: 1.2em;
+    max-width: 600px;
   }
 
   .caption {
