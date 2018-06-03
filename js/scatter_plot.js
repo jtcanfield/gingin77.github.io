@@ -1,10 +1,12 @@
+const url = 'https://api.github.com/users/gingin77/repos?per_page=100&page=1'
+
 let repoPrimryLang = []
 let arOfRepoObjs = []
 let existingArray = []
 
 drawScatterPlot()
 
-d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
+d3.json('static_data/saved_repo_data_06022018.json', function (error, data) {
   if (error) {
     return console.warn(error)
   }
@@ -13,12 +15,14 @@ d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
   evalIfArrysNotNull(arOfRepoObjs, existingArray)
 })
 
-d3.json('https://api.github.com/users/gingin77/repos?per_page=100&page=1', function (error, dataObj) {
+d3.json(url, function (error, dataObj) {
   if (error) {
     return console.warn(error)
   }
+
   dataObj.map(function (item) {
     let langObj = {}
+
     langObj.repo_name = item.name
     langObj.primary_repo_lang = item.language
     langObj.url_for_all_repo_langs = item.languages_url
@@ -54,11 +58,13 @@ let combinedArr = []
 function findNewRepos (newArray, existingArray) {
   let unMatchedObjs = []
   let existingRepos = existingArray.map(obj => obj.repo_name)
+
   newArray.forEach(function (obj) {
     if (existingRepos.indexOf(obj.repo_name) === -1) {
       unMatchedObjs.push(obj)
     }
   })
+
   newRepoUrlsToFetch = unMatchedObjs.map((obj) => obj.url_for_all_repo_langs)
   findNewReposComplete = true
   compileURLsToFetch(newRepoUrlsToFetch, updatedRepoUrlsToFetch)
@@ -99,6 +105,7 @@ function getURLsForUpdtdRepos (matchedObjs) {
   })
   let upDtdUrls = updatedObjsToFetch.map((obj) => obj.url_for_all_repo_langs)
   let upDtdUrlsMinusOrgs = removeOrgUrl(upDtdUrls)
+
   updatedRepoUrlsToFetch = elimateDuplicates(upDtdUrlsMinusOrgs)
   getURLsForUpdtdReposComplete = true
   compileURLsToFetch(newRepoUrlsToFetch, updatedRepoUrlsToFetch)
@@ -112,6 +119,7 @@ function removeOrgUrl (upDtdUrls) {
 function elimateDuplicates (arr) {
   let outPut = []
   let obj = {}
+
   arr.forEach(i => obj[i] = 0)
   for (item in obj) { outPut.push(item) }
   return outPut
@@ -198,10 +206,12 @@ function transformLangObj (myData) {
 }
 
 let newDataObjsArr = []
+
 function makeBytesFirst (myData) {
   myData.map(function (repObj) {
     let bytObj = repObj.all_lang_bytes_for_repo
     let newDataObj = {}
+
     if (bytObj.length !== 0) {
       bytObj.map(function (langByteObj) {
         newDataObj = {
@@ -226,6 +236,7 @@ function makeBytesFirst (myData) {
       newDataObjsArr.push(newDataObj)
     }
   })
+
   combineNewWithExistingObjs(newDataObjsArr, existingObjsToKeepWiOrgObjs)
 }
 
@@ -247,12 +258,13 @@ function drawScatterPlot () {
 
   function evaluateIfSVG () {
     let existingSVG = document.getElementById('for_svg')
+
     if (existingSVG.hasChildNodes()) {
       existingSVG.innerHTML = ''
     }
   }
 
-  d3.json('static_data/updatedCompObj_12_2.json', function (error, data) {
+  d3.json('static_data/saved_repo_data_06022018.json', function (error, data) {
     if (error) {
       return console.warn(error)
     }
@@ -297,9 +309,9 @@ function drawScatterPlot () {
 
     let xScale = d3.scaleTime().domain([xMin, xMax]).range([margin.right, width - margin.left]),
       xValue = function (d) { return xScale(stringToDate(d.pushed_at)) },
-      xAxis = d3.axisBottom(xScale).ticks(d3.timeWeek.every(2)).tickFormat(d3.timeFormat('%b %e'))
+      xAxis = d3.axisBottom(xScale).ticks(d3.timeWeek.every(4)).tickFormat(d3.timeFormat('%b %e'))
 
-    let yScale = d3.scaleLinear().domain([0, 115000]).range([height - 2, 0]),
+    let yScale = d3.scaleLinear().domain([0, 150000]).range([height - 2, 0]),
       yValue = function (d) { return yScale(d.count) },
       yAxis = d3.axisLeft(yScale).tickFormat(d3.format('0.2s'))
 

@@ -1,45 +1,5 @@
 [
   {
-    "language": "Ruby",
-    "count": 65014,
-    "repo_name": "tourify_rr",
-    "pushed_at": "2017-11-28T18:10:20Z",
-    "primary_repo_lang": "Ruby",
-    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
-  },
-  {
-    "language": "HTML",
-    "count": 28688,
-    "repo_name": "tourify_rr",
-    "pushed_at": "2017-11-28T18:10:20Z",
-    "primary_repo_lang": "Ruby",
-    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
-  },
-  {
-    "language": "CSS",
-    "count": 14994,
-    "repo_name": "tourify_rr",
-    "pushed_at": "2017-11-28T18:10:20Z",
-    "primary_repo_lang": "Ruby",
-    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
-  },
-  {
-    "language": "JavaScript",
-    "count": 8121,
-    "repo_name": "tourify_rr",
-    "pushed_at": "2017-11-28T18:10:20Z",
-    "primary_repo_lang": "Ruby",
-    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
-  },
-  {
-    "language": "CoffeeScript",
-    "count": 1477,
-    "repo_name": "tourify_rr",
-    "pushed_at": "2017-11-28T18:10:20Z",
-    "primary_repo_lang": "Ruby",
-    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
-  },
-  {
     "language": "JavaScript",
     "count": 6886,
     "repo_name": "Authentication_proj",
@@ -920,54 +880,6 @@
     "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_language_graph/languages"
   },
   {
-    "language": "JavaScript",
-    "count": 61748,
-    "repo_name": "gh_rest_api_fetch",
-    "pushed_at": "2017-11-29T22:57:10Z",
-    "primary_repo_lang": "JavaScript",
-    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_rest_api_fetch/languages"
-  },
-  {
-    "language": "HTML",
-    "count": 2194,
-    "repo_name": "gh_rest_api_fetch",
-    "pushed_at": "2017-11-29T22:57:10Z",
-    "primary_repo_lang": "JavaScript",
-    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_rest_api_fetch/languages"
-  },
-  {
-    "language": "CSS",
-    "count": 1121,
-    "repo_name": "gh_rest_api_fetch",
-    "pushed_at": "2017-11-29T22:57:10Z",
-    "primary_repo_lang": "JavaScript",
-    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_rest_api_fetch/languages"
-  },
-  {
-    "language": "JavaScript",
-    "count": 53631,
-    "repo_name": "gingin77.github.io",
-    "pushed_at": "2017-12-01T20:08:35Z",
-    "primary_repo_lang": "JavaScript",
-    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gingin77.github.io/languages"
-  },
-  {
-    "language": "HTML",
-    "count": 12516,
-    "repo_name": "gingin77.github.io",
-    "pushed_at": "2017-12-01T20:08:35Z",
-    "primary_repo_lang": "JavaScript",
-    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gingin77.github.io/languages"
-  },
-  {
-    "language": "CSS",
-    "count": 9238,
-    "repo_name": "gingin77.github.io",
-    "pushed_at": "2017-12-01T20:08:35Z",
-    "primary_repo_lang": "JavaScript",
-    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gingin77.github.io/languages"
-  },
-  {
     "language": "Null",
     "count": 0,
     "repo_name": "hello-world",
@@ -998,5 +910,437 @@
     "pushed_at": "2017-11-28T18:41:01Z",
     "primary_repo_lang": "JavaScript",
     "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/New_to_test_fetch_sort/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 71882,
+    "repo_name": "devcamp-portfolio",
+    "pushed_at": "2017-12-21T03:38:36Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/devcamp-portfolio/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 47906,
+    "repo_name": "devcamp-portfolio",
+    "pushed_at": "2017-12-21T03:38:36Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/devcamp-portfolio/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 36837,
+    "repo_name": "devcamp-portfolio",
+    "pushed_at": "2017-12-21T03:38:36Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/devcamp-portfolio/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 8783,
+    "repo_name": "devcamp-portfolio",
+    "pushed_at": "2017-12-21T03:38:36Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/devcamp-portfolio/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 2446,
+    "repo_name": "devcamp-portfolio",
+    "pushed_at": "2017-12-21T03:38:36Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/devcamp-portfolio/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 43540,
+    "repo_name": "Devise_test_2",
+    "pushed_at": "2017-12-19T03:57:11Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Devise_test_2/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 13625,
+    "repo_name": "Devise_test_2",
+    "pushed_at": "2017-12-19T03:57:11Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Devise_test_2/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 1156,
+    "repo_name": "Devise_test_2",
+    "pushed_at": "2017-12-19T03:57:11Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Devise_test_2/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 1060,
+    "repo_name": "Devise_test_2",
+    "pushed_at": "2017-12-19T03:57:11Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Devise_test_2/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 422,
+    "repo_name": "Devise_test_2",
+    "pushed_at": "2017-12-19T03:57:11Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Devise_test_2/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 27841,
+    "repo_name": "exercism_ruby",
+    "pushed_at": "2018-01-28T15:53:06Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/exercism_ruby/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 116152,
+    "repo_name": "gdi-intro-js",
+    "pushed_at": "2018-04-16T23:01:23Z",
+    "primary_repo_lang": "HTML",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gdi-intro-js/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 79477,
+    "repo_name": "gdi-intro-js",
+    "pushed_at": "2018-04-16T23:01:23Z",
+    "primary_repo_lang": "HTML",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gdi-intro-js/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 54239,
+    "repo_name": "gdi-intro-js",
+    "pushed_at": "2018-04-16T23:01:23Z",
+    "primary_repo_lang": "HTML",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gdi-intro-js/languages"
+  },
+  {
+    "language": "GLSL",
+    "count": 1654,
+    "repo_name": "gdi-intro-js",
+    "pushed_at": "2018-04-16T23:01:23Z",
+    "primary_repo_lang": "HTML",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gdi-intro-js/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 3140,
+    "repo_name": "gdi_js_samples",
+    "pushed_at": "2018-04-11T23:05:14Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gdi_js_samples/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 1748,
+    "repo_name": "gdi_js_samples",
+    "pushed_at": "2018-04-11T23:05:14Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gdi_js_samples/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 73423,
+    "repo_name": "gh_rest_api_fetch",
+    "pushed_at": "2017-12-08T19:26:54Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_rest_api_fetch/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 1127,
+    "repo_name": "gh_rest_api_fetch",
+    "pushed_at": "2017-12-08T19:26:54Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_rest_api_fetch/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 1121,
+    "repo_name": "gh_rest_api_fetch",
+    "pushed_at": "2017-12-08T19:26:54Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gh_rest_api_fetch/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 50977,
+    "repo_name": "gingin77.github.io",
+    "pushed_at": "2018-03-25T13:46:51Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gingin77.github.io/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 17646,
+    "repo_name": "gingin77.github.io",
+    "pushed_at": "2018-03-25T13:46:51Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gingin77.github.io/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 9818,
+    "repo_name": "gingin77.github.io",
+    "pushed_at": "2018-03-25T13:46:51Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gingin77.github.io/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 57434,
+    "repo_name": "gradebook",
+    "pushed_at": "2018-04-23T03:51:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gradebook/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 14257,
+    "repo_name": "gradebook",
+    "pushed_at": "2018-04-23T03:51:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gradebook/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 1790,
+    "repo_name": "gradebook",
+    "pushed_at": "2018-04-23T03:51:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gradebook/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 1266,
+    "repo_name": "gradebook",
+    "pushed_at": "2018-04-23T03:51:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gradebook/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 1156,
+    "repo_name": "gradebook",
+    "pushed_at": "2018-04-23T03:51:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/gradebook/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 128288,
+    "repo_name": "hackernews_clone",
+    "pushed_at": "2018-05-28T18:42:54Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/hackernews_clone/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 20208,
+    "repo_name": "hackernews_clone",
+    "pushed_at": "2018-05-28T18:42:54Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/hackernews_clone/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 3726,
+    "repo_name": "hackernews_clone",
+    "pushed_at": "2018-05-28T18:42:54Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/hackernews_clone/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 1177,
+    "repo_name": "hackernews_clone",
+    "pushed_at": "2018-05-28T18:42:54Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/hackernews_clone/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 48186,
+    "repo_name": "Rails-Devise-Skeleton",
+    "pushed_at": "2017-12-18T00:57:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Rails-Devise-Skeleton/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 14178,
+    "repo_name": "Rails-Devise-Skeleton",
+    "pushed_at": "2017-12-18T00:57:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Rails-Devise-Skeleton/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 2071,
+    "repo_name": "Rails-Devise-Skeleton",
+    "pushed_at": "2017-12-18T00:57:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Rails-Devise-Skeleton/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 661,
+    "repo_name": "Rails-Devise-Skeleton",
+    "pushed_at": "2017-12-18T00:57:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Rails-Devise-Skeleton/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 422,
+    "repo_name": "Rails-Devise-Skeleton",
+    "pushed_at": "2017-12-18T00:57:28Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/Rails-Devise-Skeleton/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 2547,
+    "repo_name": "scroll_to_fixed_nav_bar",
+    "pushed_at": "2018-01-11T16:21:55Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/scroll_to_fixed_nav_bar/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 1431,
+    "repo_name": "scroll_to_fixed_nav_bar",
+    "pushed_at": "2018-01-11T16:21:55Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/scroll_to_fixed_nav_bar/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 798,
+    "repo_name": "scroll_to_fixed_nav_bar",
+    "pushed_at": "2018-01-11T16:21:55Z",
+    "primary_repo_lang": "JavaScript",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/scroll_to_fixed_nav_bar/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 47532,
+    "repo_name": "UserTypesApp",
+    "pushed_at": "2017-12-18T03:46:27Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/UserTypesApp/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 13735,
+    "repo_name": "UserTypesApp",
+    "pushed_at": "2017-12-18T03:46:27Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/UserTypesApp/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 1156,
+    "repo_name": "UserTypesApp",
+    "pushed_at": "2017-12-18T03:46:27Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/UserTypesApp/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 885,
+    "repo_name": "UserTypesApp",
+    "pushed_at": "2017-12-18T03:46:27Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/UserTypesApp/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 211,
+    "repo_name": "UserTypesApp",
+    "pushed_at": "2017-12-18T03:46:27Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/UserTypesApp/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 65014,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 28688,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 14994,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 8121,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "CoffeeScript",
+    "count": 1477,
+    "repo_name": "tourify_rr",
+    "pushed_at": "2017-11-28T18:10:20Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/Tourify/tourify_rr/languages"
+  },
+  {
+    "language": "Ruby",
+    "count": 26176,
+    "repo_name": "dragon_app",
+    "pushed_at": "2018-06-03T00:27:34Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/dragon_app/languages"
+  },
+  {
+    "language": "HTML",
+    "count": 6319,
+    "repo_name": "dragon_app",
+    "pushed_at": "2018-06-03T00:27:34Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/dragon_app/languages"
+  },
+  {
+    "language": "JavaScript",
+    "count": 6506,
+    "repo_name": "dragon_app",
+    "pushed_at": "2018-06-03T00:27:34Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/dragon_app/languages"
+  },
+  {
+    "language": "CSS",
+    "count": 1517,
+    "repo_name": "dragon_app",
+    "pushed_at": "2018-06-03T00:27:34Z",
+    "primary_repo_lang": "Ruby",
+    "url_for_all_repo_langs": "https://api.github.com/repos/gingin77/dragon_app/languages"
   }
 ]
