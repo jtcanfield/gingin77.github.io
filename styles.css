@@ -293,13 +293,21 @@ section {
   margin-top: 0;
 }
 
-.portfolio_list_item{
+.skills_list_ul {
+  padding: 1px;
+}
+
+.portfolio_list_item, .skills_list_item {
   color:inherit;
   font-size: 1.2em;
   color: #060026;
   padding: 4px 0;
   list-style-type: disc;
   max-width: 600px;
+}
+
+.skills_list_item {
+  padding: 1px 0;
 }
 
 .margin-top{
@@ -342,13 +350,26 @@ section {
   font-weight: 400;
 }
 
-.skills_list{
+/* .skills_list{
   margin: 1.5% 0 5% 0;
 }
 
 .skills_list p{
   margin-bottom: 3%;
   text-align: left;
+} */
+
+.skills_list_all {
+  margin-bottom: 3%;
+  text-align: left;
+}
+
+.skills_list_first {
+  margin-top: 1.5%;
+}
+
+.skills_list_last {
+  margin-bottom: 5%;
 }
 
 .clip_image_holder{
@@ -358,7 +379,7 @@ section {
 }
 
 #scroll_message{
-  margin-top: 20vh;
+  margin-bottom: 20vh;
   text-align: center;
   font-style: italic;
 }
@@ -588,7 +609,7 @@ footer{
     margin-top: 1em;
   }
 
-  .portfolio_list_item{
+  .portfolio_list_item, .skills_list_item{
     color:inherit;
     font-size: 1.2em;
     max-width: 600px;
