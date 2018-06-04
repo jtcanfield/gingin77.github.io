@@ -259,6 +259,10 @@ section {
   min-height: 90vh;
 }
 
+.half_topic{
+  min-height: 45vh;
+}
+
 .anchor{
   display: block;
   height: 150px; /*same height as header*/
