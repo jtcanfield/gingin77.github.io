@@ -209,6 +209,11 @@ header {
   border-radius: 20px;
 }
 
+#back-button {
+  font-size: 40px;
+  margin-left: 12px;
+}
+
 .title_div_right {
   display: flex;
   flex-direction: column;
