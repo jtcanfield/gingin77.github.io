@@ -111,6 +111,10 @@ p {
   flex-direction: row;
 }
 
+ul, ol {
+  padding: 0 20px;
+}
+
 #side_bar ul {
   display: flex;
   justify-content: space-between;
@@ -251,12 +255,15 @@ section {
 .topic{
   position: relative;
   margin: 0 1em;
-  text-align: justify;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   min-height: 90vh;
+}
+
+.portfolio_items, .portfolio_item_1, .portfolio_item_2, .instructions {
+  max-width: 600px;
 }
 
 .half_topic{
@@ -274,6 +281,10 @@ section {
   font-weight: 400;
   text-align: center;
   font-size: 2em;
+}
+
+.centered {
+  text-align: center;
 }
 
 .project_wrapper{
@@ -297,7 +308,7 @@ section {
   padding: 1px;
 }
 
-.portfolio_list_item, .skills_list_item {
+.portfolio_list_item, .skills_list_item, .instruction_list_item {
   color:inherit;
   font-size: 1.2em;
   color: #060026;
@@ -308,6 +319,15 @@ section {
 
 .skills_list_item {
   padding: 1px 0;
+}
+
+.instruction_list_item {
+  list-style-type: decimal;
+}
+
+.sub_item {
+  font-size: 1em;
+  list-style-type: disc;
 }
 
 .margin-top{
@@ -397,6 +417,29 @@ section {
   max-width: 600px;
 }
 
+.song_img_wrapper {
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #747B8F;
+  border-radius: 6px;
+}
+
+#song_gif {
+  flex: 2.6;
+  margin: 10px 5px 10px 10px;
+  border-radius: 6px;
+}
+
+#song_mobile {
+  flex: 1.1;
+  margin: 10px 10px 10px 5px;
+  border-radius: 6px;
+}
+
+
+
 /*  Styles related to svg    */
 svg {
   padding: 20px 0 5px;
@@ -468,7 +511,6 @@ h3 {
 
 .c_above{
   margin: 0.3em 0 0 0;
-  margin-bottom: 1.0em;
 }
 
 .c_below{

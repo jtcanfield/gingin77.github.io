@@ -157,32 +157,31 @@
           I've written a blog post series discussing how I went about designing and building the scatter plot above. The series starts off with the following intro post: <a href="https://ginnielearnstocode.wordpress.com/2017/12/03/building-a-scatter-plot-with-d3-js-using-programming-language-data-from-githubs-rest-api/">Building a scatter plot with d3.js using data from GitHub’s REST API</a>
         </p>
       </div>
-      <div class="topic p_600_max">
-        <p class="skills_graph_title">Programming Languages for GitHub Repos: Bar Graph and TreeMap</p>
-        <p class="caption c_below">The bar graph and TreeMap below are based on the same data source as the scatterplot. The screenshot was snapped from a Sinatra/Ruby app I host locally. For more details on the app, see the README.md file on the <a href="https://github.com/gingin77/gh_language_graph">project repo. <i class="fa fa-github" aria-hidden="true"></i></a></p>
-        <img class="skills_img" src="images/Screen_shot_2018-06-02.png" />
+      <div class="half_topic">
       </div>
       <span class="anchor" id="portfolio"></span>
       <div class="topic p_600_max portfolio">
-        <p class="centered_p">Portfolio</p>
-        <p>
-          I am still in the process of adding project details to this section of the site. To see descriptions of more projects and ongoing work, please visit my GitHub site at <a href="https://github.com/gingin77">github.com/gingin77 <i class="fa fa-github" aria-hidden="true"></i></a>.
-        </p>
-        <p>
-          Some of the information here is also included in my resume, which is available to <a href='resume.html'>view </a> and <a href="public/G.Hench_Resume.pdf" download="true">download</a>.
-        </p>
-        <br />
-        <span class="bold_header">Featured Projects:</span>
-        <ul class="no_top_margin">
-          <li class="portfolio_list_item">
-            <a href="#songs">Song Snippet Player:</a> a responsive, client-side app that lets you to build a playlist of song snippets using data pulled from the iTunes API
-          </li>
-          <li class="portfolio_list_item">
-            <a href="#tourify">Tourify:</a> a Ruby on Rails app that supports a mobile-responsive guided tour of downtown Durham
-          </li>
-          <li class="portfolio_list_item italic">Scatter Plot Using Data from GitHub REST API: more details coming soon
-          </li>
-        </ul>
+        <div class="portfolio_items">
+          <p class="centered_p">Portfolio</p>
+          <p>
+            I am still in the process of adding project details to this section of the site. To see descriptions of more projects and ongoing work, please visit my GitHub site at <a href="https://github.com/gingin77">github.com/gingin77 <i class="fa fa-github" aria-hidden="true"></i></a>.
+          </p>
+          <p>
+            Some of the information here is also included in my resume, which is available to <a href='resume.html'>view </a> and <a href="public/G.Hench_Resume.pdf" download="true">download</a>.
+          </p>
+          <br />
+          <span class="bold_header">Featured Projects:</span>
+          <ul class="no_top_margin">
+            <li class="portfolio_list_item">
+              <a href="#songs">Song Snippet Player:</a> a responsive, client-side app that lets you to build a playlist of song snippets using data pulled from the iTunes API
+            </li>
+            <li class="portfolio_list_item">
+              <a href="#tourify">Tourify:</a> a Ruby on Rails app that supports a mobile-responsive guided tour of downtown Durham
+            </li>
+            <li class="portfolio_list_item italic">Scatter Plot Using Data from GitHub REST API: more details coming soon
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="topic p_600_max portfolio">
         <div class="portfolio_item_1 topic">
@@ -208,9 +207,13 @@
               </li>
             </ul>
           </p>
-          <p class="caption c_above">The GIF below shows the playlist feature in action!
+          <p class="caption c_above">The GIF below shows the playlist feature in action and the image to the right is a sample mobile view.
           </p>
-          <img class="skills_img" src="images/song_snippet_player.gif"/>
+          <div class="song_img_wrapper">
+            <img class="song_img" id="song_gif" src="images/song_snippet_player.gif"/>
+            <img class="song_img" id="song_mobile" src="images/song_snippet_mobile.jpg"/>
+          </div>
+
         </div>
         <div class="half_topic">
         </div>
@@ -230,10 +233,10 @@
           </p>
           <img class="skills_img" src="images/tour_and_creator_views2.png"/>
           <br />
-          <p class="caption c_above">The image above shows Tourify's home page for the tourist's view (left) and a view from Tourify's Content Creator's Dashboad (right). Tourify’s tourist’s view is available at: <a href="http://tourify.city/">tourify.city</a>
+          <p class="caption c_below">The image above shows Tourify's home page for the tourist's view (left) and a view from Tourify's Content Creator's Dashboad (right). Tourify’s tourist’s view is available at: <a href="http://tourify.city/">tourify.city</a>
           </p>
           <p>
-            As a <span class="bold_header">backend developer</span> on the project, I was involved in building this Ruby on Rails web app that serves an API with tour and stop information to the frontend and supports a Content Creator’s Dashboard, which provides an interface to make changes to the content in the API.
+            As a backend developer on the project, I was involved in building this Ruby on Rails web app that exposes a public API with tour and stop information for the React frontend and supports a Content Creator’s Dashboard, which provides an interface to make changes to the content in the API.
             <ul class="no_top_margin">
               <li class="portfolio_list_item">
                 A user must register and be logged in to access Tourify's Content Creator’s Dashboard
@@ -242,7 +245,7 @@
                 A user can only view and make edits to tours associated with the same organization to which that user is a member
               </li>
               <li class="portfolio_list_item">
-                Content Creators can add multiple stops to a tour at once by uploading a .csv file. It is also possible to export multiple stops at once to either a .csv or .excel file.
+                Content Creators can add multiple stops to a tour in bulk by uploading a .csv file. It is also possible to export multiple stops at once to either a .csv or .excel file.
               </li>
             </ul>
           </p>
@@ -251,22 +254,8 @@
           <img class="skills_img" src="images/Stops_main_page.png"/>
           <br />
           <br />
-          <p class="margin-top"><span class="bold_header">Tourify’s Content Creator Dashboard</span> is available in a beta-tester's version at:<a href="https://agile-mesa-66753.herokuapp.com/"> agile-mesa-66753.herokuapp.com</a>
+          <p class="margin-top"><span class="bold_header">Tourify’s Content Creator Dashboard</span> is available in a beta-tester's version <a href="https://agile-mesa-66753.herokuapp.com/"> here.</a> Click <a href='tourify-beta-tester-instructions.html'>here</a> for instructions on how to view the beta testers version of the Content Creator's dashboard.
           </p>
-          <ul class="no_top_margin">
-            <li class="portfolio_list_item">
-              You can create a username and password on the Registration page and then you'll then be routed to the Login page.
-            </li>
-            <li class="portfolio_list_item">
-              After you login, you'll see the Organization home page, which lists all tours associated with the given organization (the view shown above).
-            </li>
-            <li class="portfolio_list_item">
-              Feel free to test out the options available - view the individual stops or the tours overview page.
-            </li>
-            <li class="portfolio_list_item">
-              Bulk-upload and download options are available for handling multiple stops associated with a given tour. To view these options, select "See tour overview" on the Organization home page and then select the organge button that says "Stops Main Page". Alternatively, if you have logged in, you should be able to access the Stops Main Page by opening the following URL: <a href="https://agile-mesa-66753.herokuapp.com/organizations/3/tours/4/stops">agile-mesa-66753.herokuapp.com/organizations/3/tours/4/stops</a>
-            </li>
-          </ul>
           <p>
             <span class="bold_header">Tourify’s Backend Code Repository: </span><a href="https://github.com/Tourify/tourify_rr">github.com/Tourify/tourify_rr</a>
           </p>
@@ -353,7 +342,7 @@
         </div>
       </div>
     </footer>
-  </>
+  </div>
   <script type="application/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/scatter_plot.js"></script>
 </body>
