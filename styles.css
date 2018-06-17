@@ -305,6 +305,17 @@ section {
   text-align: left;
 }
 
+#portfolio-thumb-wrapper {
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#portfolio-thumb-wrapper img {
+  max-width: 95%;
+}
+
 .no_top_margin{
   margin-top: 0;
 }
