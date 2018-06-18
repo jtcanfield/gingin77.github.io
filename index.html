@@ -163,6 +163,12 @@
       <div class="topic p_600_max portfolio">
         <div class="portfolio_items">
           <p class="centered_p">Portfolio</p>
+          <p>
+            To see most recent projects and updates to ongoing work, please visit my GitHub site at
+            <a href="https://github.com/gingin77">github.com/gingin77
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>.
+          </p>
           <div id="portfolio-thumb-wrapper">
             <div id="thumb-tourify">
               <img src="images/portfolio_thumbs/tourify.png" />
@@ -181,26 +187,65 @@
             </div>
           </div>
           <p>
-            To see updates, most recent more projects and ongoing work, please visit my GitHub site at <a href="https://github.com/gingin77">github.com/gingin77 <i class="fa fa-github" aria-hidden="true"></i></a>.
-          </p>
-          <p>
-            Some of the information here is also included in my resume, which is available to <a href='resume.html'>view </a> and <a href="public/G.Hench_Resume.pdf" download="true">download</a>.
+            Some of the information below is also included in my resume, which is available to <a href='resume.html'>view </a> and <a href="public/G.Hench_Resume.pdf" download="true">download</a>.
           </p>
           <br />
-          <span class="bold_header">Featured Projects:</span>
+          <p><span class="bold_header">Featured Projects:</span></p>
           <ul class="no_top_margin">
+            <li class="portfolio_list_item">
+              <a href="#hacker-news">My Hacker News Lite:</a> a Rails web app modelled after Hacker News
+            </li>
             <li class="portfolio_list_item">
               <a href="#songs">Song Snippet Player:</a> a responsive, client-side app that lets you build a playlist of song snippets using data pulled from the iTunes API
             </li>
             <li class="portfolio_list_item">
               <a href="#tourify">Tourify:</a> a Ruby on Rails app that supports a mobile-responsive guided tour of downtown Durham
             </li>
-            <li class="portfolio_list_item italic">Scatter Plot Using Data from GitHub REST API: more details coming soon
+            <li class="portfolio_list_item italic">More details on other projects coming soon
             </li>
           </ul>
         </div>
       </div>
       <div class="topic p_600_max portfolio">
+        <div class="portfolio_item_1 topic">
+          <span class="anchor" id="hacker-news"></span>
+          <p class="project_title">My Hacker News Lite</p>
+          <p>This web app was modelled after the <a href="https://news.ycombinator.com/">Y Combinator's Hacker News site</a>. The backend is built in Ruby on Rails with jQuery and AJAX-enabled requests on the front-end.
+            <ul class="no_top_margin">
+              <li class="portfolio_list_item">
+                Authenticated users can submit posts, make comments on posts, and reply to other comments
+              </li>
+              <li class="portfolio_list_item">
+                When logged in, users can vote on posts and comments, change their own vote, or cancel their own vote
+              </li>
+              <li class="portfolio_list_item">
+                The site is deployed to a Digital Ocean Droplet configured with Passenger and Nginx. An SSL certifcate from Let's Encrypt was installed with CertBot.
+              </li>
+            </ul>
+          </p>
+          <p class="caption c_above">The GIF below shows ways a user can interact with a post by up-voting, down-voting, cancelling their vote, and adding a comment.
+          </p>
+          <div class="hn_img_wrapper">
+            <img class="skills_img" id="song_gif" src="images/hn-comment-submission.gif" />
+          </div>
+          <p>
+            <ul class="no_top_margin">
+              <li class="portfolio_list_item">
+                <span>Site: </span>
+                <a href="https://myhackernewslite.com/">myhackernewslite.com</a>
+                </span>
+              </li>
+              <li class="portfolio_list_item">
+                <span>Code Repository: </span>
+                <a href="https://github.com/gingin77/hackernews_clone">github.com/gingin77/hackernews_clone</a>
+                </span>
+              </li>
+            </ul>
+          </p>
+        
+        </div>
+        <div class="half_topic">
+        </div>
         <div class="portfolio_item_1 topic">
           <span class="anchor" id="songs"></span>
           <p class="project_title">Song Snippet Player</p>
@@ -227,8 +272,8 @@
           <p class="caption c_above">The GIF below shows the playlist feature in action and the image to the right is a sample mobile view.
           </p>
           <div class="song_img_wrapper">
-            <img class="song_img" id="song_gif" src="images/song_snippet_player.gif"/>
-            <img class="song_img" id="song_mobile" src="images/song_snippet_mobile.jpg"/>
+            <img class="skills_img" id="song_gif" src="images/song_snippet_player.gif"/>
+            <img class="skills_img" id="song_mobile" src="images/song_snippet_mobile.jpg"/>
           </div>
 
         </div>
