@@ -5,8 +5,9 @@ let contents = document.getElementById('contents')
 document.onreadystatechange = function () {
   var state = document.readyState
   if (viewportWidth > 500) {
+    adjustForNotSmallVP();
     if (state === 'interactive') {
-      alignContactPhotoNonMob()
+      alignContactPhotoNonMob();
     } else if (state === 'complete') {
       setTimeout(function () {
         loader.classList.add('fadeOut')
@@ -25,10 +26,11 @@ window.addEventListener('resize', adjustIfNeeded)
 function adjustIfNeeded () {
   viewportWidth = window.innerWidth
   if (viewportWidth <= 500) {
-    loader.remove()
-    adjustForSmallVP()
+    loader.remove();
+    adjustForSmallVP();
   } else {
-    alignContactPhotoNonMob()
+    alignContactPhotoNonMob();
+    adjustForNotSmallVP();
   }
 }
 
@@ -52,6 +54,14 @@ function alignContactPhotoNonMob () {
   connectMessage.appendChild(self)
   if (divToDelete !== null) {
     divToDelete.remove()
+  }
+}
+
+function adjustForNotSmallVP() {
+  console.log("adjustForNotSmallVP was called");
+  let elsToRemove = document.getElementsByClassName("removeOnNonMobile");
+  for (let i = elsToRemove.length - 1; i >= 0; i--) {
+    elsToRemove[i].remove()
   }
 }
 

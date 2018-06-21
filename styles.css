@@ -72,6 +72,7 @@ body{
   font-weight: 300;
   background-color: #F6F5F6;
   color: #060026;
+  overflow-x: hidden;
 }
 
 li {
@@ -321,9 +322,9 @@ section {
   margin-top: 0;
 }
 
-.skills_list_ul {
+/* .skills_list_ul {
   padding: 1px;
-}
+} */
 
 .portfolio_list_item, .skills_list_item, .instruction_list_item {
   color:inherit;
@@ -421,12 +422,12 @@ section {
   font-style: italic;
 }
 
-#snippet_img{
+/* #snippet_img{
   width: 100%;
   height: auto;
   max-width: 300px;
   margin-top: 40px;
-}
+} */
 
 .skills_img{
   width: 100%;
@@ -434,30 +435,38 @@ section {
   max-width: 600px;
 }
 
-.song_img_wrapper {
+.song_img_wrapper, .hn_wrapper {
   max-width: 600px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  border-radius: 6px;
+}
+
+.song_img_wrapper {
   background-color: #747B8F;
+}
+
+#hn_gif{
+  max-width: 100%;
+  /* margin-top: 10px; */
+  /* margin-bottom: 5px; */
+}
+
+#song_gif, #song_mobile {
+  max-width: 95%;
   border-radius: 6px;
 }
 
 #song_gif {
-  flex: 2.6;
-  margin: 10px 5px 10px 10px;
-  border-radius: 6px;
-  max-width: 400px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 #song_mobile {
-  flex: 1.1;
-  margin: 10px 10px 10px 5px;
-  border-radius: 6px;
-  max-width: 170px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
-
-
 
 /*  Styles related to svg    */
 svg {
@@ -696,6 +705,31 @@ footer{
   .p_600_max a:hover{
     color: #a19fae;
     font-weight: 400;
+  }
+
+  .skills_img{
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    /* max-width: 95%; */
+  }
+
+  .song_img_wrapper {
+    flex-direction: row;
+  }
+
+  #song_gif {
+    flex: 2.6; */
+    /* padding: 10px 10px; */
+    border-radius: 6px;
+    margin: 10px 5px 10px 10px;
+    max-width: 400px;
+  }
+
+  #song_mobile {
+    flex: 1.1;
+    margin: 10px 10px 10px 5px;
+    max-width: 170px;
   }
 
   .connect_wrapper {
