@@ -2,22 +2,27 @@ let viewportWidth = window.innerWidth
 let loader = document.getElementById('loader')
 let contents = document.getElementById('contents')
 
+const mq = window.matchMedia( "(min-width: 500px)" );
+
+if (mq.matches) {
+  // TODO: Refactor by clustering1) objects to remove when not-mobile vs 2) objects to add
+  adjustForNotSmallVP();
+  alignContactPhotoNonMob();
+} else {
+  contents.classList.remove('not_visible')
+  adjustForSmallVP()
+  loader.remove()
+}
+
 document.onreadystatechange = function () {
   var state = document.readyState
-  if (viewportWidth > 500) {
-    adjustForNotSmallVP();
-    if (state === 'interactive') {
-      alignContactPhotoNonMob();
-    } else if (state === 'complete') {
-      setTimeout(function () {
-        loader.classList.add('fadeOut')
-        showContents()
-      }, 200)
-    }
-  } else {
-    contents.classList.remove('not_visible')
-    adjustForSmallVP()
-    loader.remove()
+  if (state === 'interactive') {
+    console.log("state is interactive")
+  } else if (state === 'complete') {
+    setTimeout(function () {
+      loader.classList.add('fadeOut')
+      showContents()
+    }, 200)
   }
 }
 
