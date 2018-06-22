@@ -58,7 +58,6 @@ function alignContactPhotoNonMob () {
 }
 
 function adjustForNotSmallVP() {
-  console.log("adjustForNotSmallVP was called");
   let elsToRemove = document.getElementsByClassName("removeOnNonMobile");
   for (let i = elsToRemove.length - 1; i >= 0; i--) {
     elsToRemove[i].remove()
