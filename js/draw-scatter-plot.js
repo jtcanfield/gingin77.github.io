@@ -1,6 +1,23 @@
-import { getDataForD3 } from "./process-data.js";
+import { getGeneralRepoInfo } from "./compare-repo-info.js";
+import { getNewRepoDetails } from "./get-new-details.js";
 
 const filePath = "static_data/saved_repo_data_06022018.json";
+
+async function getDataForD3() {
+  try {
+    const {
+      unchangedRepos,
+      newRepos,
+      urlsToFetch 
+    } = await getGeneralRepoInfo();
+  
+    const newRepoData = await getNewRepoDetails(urlsToFetch, newRepos);
+    
+    return unchangedRepos.concat(newRepoData)
+  } catch(e) {
+    console.log(`I'm the message for getDataForD3: ${e}`)
+  }
+}
 
 export async function drawScatterPlot() {
   evaluateIfSVG()
@@ -15,8 +32,8 @@ export async function drawScatterPlot() {
   }
 
   try {
-    let newRepoData = await getDataForD3();
-    console.log(newRepoData)
+    let newRepoDataToPlot = await getDataForD3();
+    // console.log(newRepoDataToPlot)
 
     d3.json(filePath).then(function (staticData) {
       let myData = []
