@@ -7,11 +7,11 @@ async function getDataForD3() {
   try {
     const {
       unchangedRepos,
-      newRepos,
+      newAndUpdatedRepoBaseInfo,
       urlsToFetch 
     } = await getGeneralRepoInfo();
   
-    const newRepoData = await getNewRepoDetails(urlsToFetch, newRepos);
+    const newRepoData = await getNewRepoDetails(urlsToFetch, newAndUpdatedRepoBaseInfo);
     
     return unchangedRepos.concat(newRepoData)
   } catch(e) {
@@ -32,8 +32,8 @@ export async function drawScatterPlot() {
   }
 
   try {
-    let newRepoDataToPlot = await getDataForD3();
-    // console.log(newRepoDataToPlot)
+    let newRepoData = await getDataForD3();
+    console.log(newRepoData)
 
     d3.json(filePath).then(function (staticData) {
       let myData = []

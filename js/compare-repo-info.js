@@ -4,23 +4,28 @@ export async function getGeneralRepoInfo() {
     let gitHubApiData = mapGitHubData(apiData)
 
     // sort inputs to identify new requests to perform & data to preserve
-    let newRepos = findNewRepos(gitHubApiData, oldStaticData)
-    let unchangedRepos = findUnchangedRepos(gitHubApiData, oldStaticData)
-    let updatedRepos = findUpdatedRepos(oldStaticData, unchangedRepos)
+    let newRepos                   = findNewRepos(gitHubApiData, oldStaticData)
+    let unchangedRepos             = findUnchangedRepos(gitHubApiData, oldStaticData)
+    let updatedRepoLanguageObjects = findupdatedRepoLanguageObjects(oldStaticData, unchangedRepos)
 
     // identify urls to send fetch requests to
-    let newRepoUrls = getUrls(newRepos);
-    let updatedRepoUrls = getUrls(updatedRepos);
-    let urlsToFetch = organizeUrls(newRepoUrls, updatedRepoUrls);
+    let newRepoUrls     = getUrls(newRepos);
+    let updatedRepoUrls = getUrls(updatedRepoLanguageObjects);
+    let urlsToFetch     = organizeUrls(newRepoUrls, updatedRepoUrls);
 
     // preserve data from unchanged repos
-    let tourifyStats = findTourifyStats(oldStaticData);
+    let tourifyStats      = findTourifyStats(oldStaticData);
     let allUnchangedRepos = keepTourifyStats(unchangedRepos, tourifyStats);
 
+    // select general data state from updated repos
+    let updatedRepos = selectGeneralData(gitHubApiData, updatedRepoLanguageObjects);
+
+    let newAndUpdatedRepoBaseInfo = updatedRepos.concat(newRepos);
+
     return {
-      unchangedRepos: allUnchangedRepos,
-      newRepos:       newRepos,
-      urlsToFetch:    urlsToFetch
+      unchangedRepos:            allUnchangedRepos,
+      newAndUpdatedRepoBaseInfo: newAndUpdatedRepoBaseInfo,
+      urlsToFetch:               urlsToFetch
     }
   } catch (e) {
     console.log(`I'm the message for getGeneralRepoInfo: ${e}`);
@@ -93,14 +98,23 @@ function findUnchangedRepos(gitHubApiData, oldStaticData) {
   return matchingRepoInfo;
 }
 
-function findUpdatedRepos(oldStaticData, unchangedRepos) {
-  let updatedRepos = [];
+function findupdatedRepoLanguageObjects(oldStaticData, unchangedRepos) {
+  let updatedRepoLanguageObjects = [];
   oldStaticData.forEach(saved => {
     if (unchangedRepos.indexOf(saved) === -1) {
-      updatedRepos.push(saved);
+      updatedRepoLanguageObjects.push(saved);
     }
   });
-  return updatedRepos;
+  return updatedRepoLanguageObjects;
+}
+
+function selectGeneralData(gitHubApiData, repoLanguageObjects) {
+  let updatedRepoNames = repoLanguageObjects.map(obj => obj.repo_name);
+  updatedRepoNames = elimateDuplicates(updatedRepoNames).filter(name => name != "tourify_rr");
+
+  return updatedRepoNames.map(name => {
+    return gitHubApiData.find(repo => repo.repo_name === name);
+  });
 }
 
 function getUrls(repos) {
