@@ -5,6 +5,12 @@ import { drawScatterPlot } from './draw-scatter-plot.js';
 require('./compare-repo-info.js');
 require('./date.js');
 require('./get-new-details.js');
+// import '../public/styles.css';
+// import '../public/font-awesome-4.7.0/css/font-awesome.min.css';
+require('../public/images/IMG_0999_1.jpg');
+require('../public/images/IMG_0999_100_dpi.jpg');
+require('../public/styles.css');
+require('../public/font-awesome-4.7.0/css/font-awesome.min.css');
 
 
 document.onreadystatechange = function () {
