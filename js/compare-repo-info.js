@@ -35,7 +35,7 @@ export async function getGeneralRepoInfo() {
 async function getData() {
   try {
     const paths = [
-      "static_data/api-data-62210.json",
+      "https://api.github.com/users/gingin77/repos?per_page=100&page=1",
       "static_data/saved_repo_data_06022018.json"
     ];
 
