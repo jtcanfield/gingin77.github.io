@@ -1,8 +1,16 @@
 let viewportWidth = window.innerWidth
-let loader = document.getElementById('loader')
-let contents = document.getElementById('contents')
+let loader = document.getElementById('loader');
+let contents = document.getElementById('contents');
+import { drawScatterPlot } from './draw-scatter-plot.js';
+require('./compare-repo-info.js');
+require('./date.js');
+require('./get-new-details.js');
+
 
 document.onreadystatechange = function () {
+  if (document.readyState == "interactive") {
+    drawScatterPlot();
+  }
   var state = document.readyState
   if (viewportWidth > 500) {
     adjustForNotSmallVP();

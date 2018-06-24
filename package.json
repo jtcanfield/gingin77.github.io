@@ -1,0 +1,23 @@
+{
+  "name": "gingin77.github.io",
+  "version": "0.1.0",
+  "description": "Personal Site with portfolio in progress - currently hosts most up-to-date version of GitHub REST API/d3.js scatterplot project",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gingin77/gingin77.github.io"
+  },
+  "author": "Ginnie Hench <ginniehench@gmail.com>",
+  "homepage": "https://gingin77.github.io/",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
