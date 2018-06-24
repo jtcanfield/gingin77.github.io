@@ -689,7 +689,7 @@ footer{
   }
 
   #song_gif {
-    flex: 2.6; */
+    flex: 2.6;
     /* padding: 10px 10px; */
     border-radius: 6px;
     margin: 10px 5px 10px 10px;
@@ -738,6 +738,7 @@ footer{
   .div_svg_caption p{
     width: 480px;
   }
+}
 
 @media (min-height: 660px){
   .show_icons_below_first{
