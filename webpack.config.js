@@ -1,9 +1,14 @@
+let webpack = require('webpack');
+
 module.exports = {
     entry: './js/app.js',
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.js',
         publicPath: 'dist/'
+    },
+    optimization: {
+        minimize: true
     },
     module: {
         rules: [
@@ -27,8 +32,8 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                            bypassOnDebug: true, // webpack@1.x
-                            disable: true, // webpack@2.x and newer
+                            bypassOnDebug: false, // webpack@1.x
+                            disable: false, // webpack@2.x and newer
                         },
                     },
                 ],
